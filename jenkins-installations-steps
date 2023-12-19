@@ -1,8 +1,7 @@
+1--
 docker network create jenkins
 
-
 2--
-
 docker run --name jenkins-docker --rm --detach \
   --privileged --network jenkins --network-alias docker \
   --env DOCKER_TLS_CERTDIR=/certs \
@@ -31,3 +30,15 @@ docker run --name jenkins-blueocean --detach \
   myjenkins-blueocean:2.426.2-1
 
 http://localhost:8080
+
+
+
+--Docker
+
+docker pull sonarqube
+
+docker run --name sonarqube --restart always -p 9000:9000 -d sonarqube
+
+docker pull sonarsource/sonar-scanner-cli
+
+docker run --network=host -e SONAR_HOST_URL='http://127.0.0.1:9000' --user="$(id -u):$(id -g)" -v "$PWD" sonarsource/sonar-scanner-cli
