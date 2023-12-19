@@ -9,7 +9,7 @@ pipeline {
          stage('Initialize'){
             steps{
                 echo "Step that saw"
-                echo 'mvn --version'
+                sh 'mvn --version'
             }
         }
         stage('Build') {
