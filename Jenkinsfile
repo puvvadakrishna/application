@@ -6,6 +6,11 @@ pipeline {
         }
     }
     stages {
+        stage('Doc version') {
+            steps {
+                sh 'docker --version'
+            }
+        }
          stage('Initialize'){
             steps{
                 echo "Step that saw"
