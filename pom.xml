@@ -20,7 +20,7 @@
     </properties>
     <modules>
         <module>shopping-api</module>
-        <module>learning</module>
+       <!-- <module>learning</module> -->
     </modules>
 
     <dependencies>
