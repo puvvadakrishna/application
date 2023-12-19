@@ -20,10 +20,5 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Deliver') {
-              steps {
-                sh 'deliver.sh'
-              }
-            }
         }
 }
