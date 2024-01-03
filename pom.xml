@@ -9,18 +9,18 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.shopping</groupId>
-    <artifactId>application</artifactId>
+    <artifactId>app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>application</name>
+    <name>app</name>
     <packaging>pom</packaging>
 
-    <description>application</description>
+    <description>app-sample-examples</description>
     <properties>
         <java.version>17</java.version>
     </properties>
     <modules>
-        <module>shopping-api</module>
-        <module>learning</module>
+        <module>api-shopping</module>
+      	<module>api-integration</module>
     </modules>
 
     <dependencies>
@@ -44,5 +44,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
