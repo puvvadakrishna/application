@@ -19,8 +19,8 @@
         <java.version>17</java.version>
     </properties>
     <modules>
-        <module>shopping-api</module>
-        <!-- <module>learning</module> -->
+        <module>api-shopping</module>
+      	<module>api-integration</module>
     </modules>
 
     <dependencies>
