@@ -19,4 +19,10 @@ public class ProducerConfiguration {
         return TopicBuilder.name("producer_string")
                 .build();
     }
+
+    @Bean
+    public NewTopic wikimediaRecentChange() {
+        return TopicBuilder.name("wikimedia.recentchange").partitions(3).replicas(3)
+                .build();
+    }
 }

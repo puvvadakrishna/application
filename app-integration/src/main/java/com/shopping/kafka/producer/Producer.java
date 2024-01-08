@@ -1,7 +1,12 @@
 package com.shopping.kafka.producer;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.header.Header;
+import org.apache.kafka.common.header.internals.RecordHeader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +38,17 @@ public class Producer {
     }
 
     public SendResult<String, Order> sendMessageSync(Order order) throws ExecutionException, InterruptedException {
-        SendResult<String, Order> result = (SendResult<String, Order>) kafkaTemplate.send(AppConstants.TOPIC_JSON, order.getId(), order).get();
-        kafkaTemplate.send(AppConstants.TOPIC_JSON, "test-message");
-        kafkaTemplate.send(AppConstants.TOPIC_JSON, 1);
+
+
+        List<Header> headers = new ArrayList<>();
+        headers.add(new RecordHeader("kafka_receivedTopic", AppConstants.TOPIC_JSON.getBytes()));
+        ProducerRecord<String, Order> record = new ProducerRecord <>(AppConstants.TOPIC_JSON, null, order.getId(), order, headers);
+
+        //producer.send(record);
+
+        SendResult<String, Order> result = (SendResult<String, Order>) kafkaTemplate.send(record).get();
+        //kafkaTemplate.send(AppConstants.TOPIC_JSON, "test-message");
+        //kafkaTemplate.send(AppConstants.TOPIC_JSON, 1);
         //result.get();-- to hold the sync call until message is sent
         success(result, order);
 

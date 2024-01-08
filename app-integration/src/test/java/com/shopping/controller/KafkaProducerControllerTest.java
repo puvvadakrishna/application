@@ -12,18 +12,21 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.shopping.controller.KafkaProducerController;
 import com.shopping.kafka.producer.Order;
 import com.shopping.kafka.producer.Producer;
+import com.shopping.kafka.producer.wikimedia.WikimediaChangesProducer;
 // test slice
 @WebMvcTest(KafkaProducerController.class)
-class ProducerControllerTest {
+class KafkaProducerControllerTest {
 
     @Autowired
     MockMvc mockMvc;
 
     @MockBean
     private Producer producer;
+
+    @MockBean
+    private WikimediaChangesProducer wikimediaChangesProducer;
 
     @Test
     void publish() throws Exception {

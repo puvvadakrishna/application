@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.shopping.kafka.producer.Order;
 import com.shopping.kafka.producer.Producer;
+import com.shopping.kafka.producer.wikimedia.WikimediaChangesProducer;
 
 @RestController
 @RequestMapping("/api/v1/kafka")
@@ -23,8 +23,11 @@ public class KafkaProducerController {
 
     private final Producer producer;
 
-    public KafkaProducerController(Producer producer) {
+    private final WikimediaChangesProducer wikimediaChangesProducer;
+
+    public KafkaProducerController(Producer producer, WikimediaChangesProducer wikimediaChangesProducer) {
         this.producer = producer;
+        this.wikimediaChangesProducer = wikimediaChangesProducer;
     }
 
     @GetMapping("/publish")
@@ -38,5 +41,13 @@ public class KafkaProducerController {
         producer.sendMessageSync(order);
         LOGGER.info("After sending the message..");
         return ResponseEntity.status(HttpStatus.CREATED).body("Message sent to kafka topic");
+    }
+
+    @GetMapping("/send-wikichanges")
+    public ResponseEntity<String> sendWikiChages() throws ExecutionException, InterruptedException {
+        LOGGER.info("Before sending the message..");
+        //wikimediaChangesProducer.send();
+        LOGGER.info("After sending the message..");
+        return ResponseEntity.status(HttpStatus.CREATED).body("Wiki updates sent to kafka topic");
     }
 }

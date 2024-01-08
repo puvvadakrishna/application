@@ -26,9 +26,8 @@ import org.springframework.util.backoff.FixedBackOff;
 import com.shopping.kafka.exceptions.CustomException;
 import com.shopping.kafka.producer.ProducerConfiguration;
 @Configuration
-
 public class ConsumerConfiguration {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ProducerConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ConsumerConfiguration.class);
     protected final KafkaProperties properties;
     @Autowired
     KafkaTemplate kafkaTemplate;
@@ -94,7 +93,8 @@ public class ConsumerConfiguration {
         kafkaContainerCustomizer.ifAvailable(factory::setContainerCustomizer);
         factory.setCommonErrorHandler(errorHandler());
         factory.getContainerProperties().setAckCount(ContainerProperties.AckMode.MANUAL.ordinal());
-        factory.setConcurrency(3);
+        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
+        factory.setConcurrency(1);
         return factory;
     }
 }
