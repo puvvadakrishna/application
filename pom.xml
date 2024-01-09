@@ -16,7 +16,14 @@
 
     <description>app-sample-examples</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>11</java.version>
+        <jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
+        <jacoco.bundle.line.coverage>1.0</jacoco.bundle.line.coverage>
+        <jacoco.bundle.instruction.coverage>1.0</jacoco.bundle.instruction.coverage>
+        <jacoco.bundle.branch.coverage>1.0</jacoco.bundle.branch.coverage>
+        <jacoco.bundle.missed.classes>0</jacoco.bundle.missed.classes>
+        <cucumber.version>6.8.1</cucumber.version>
+
     </properties>
     <modules>
         <module>app-shopping</module>

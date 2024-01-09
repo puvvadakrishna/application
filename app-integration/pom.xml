@@ -9,11 +9,6 @@
 	<artifactId>app-integration</artifactId>
 	<name>app-integration</name>
 	<description>app-integration</description>
-	<properties>
-		<java.version>17</java.version>
-		<cucumber.version>6.8.1</cucumber.version>
-
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
