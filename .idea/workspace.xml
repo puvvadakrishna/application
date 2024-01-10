@@ -4,29 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3082ff7e-e2b0-4967-b025-7df841ec4c7a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app-integration/app-integration.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/app-shopping.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+    <list default="true" id="3082ff7e-e2b0-4967-b025-7df841ec4c7a" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/customer/PurchaseSomethingImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/customerdetails/SaveCustomerDataImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/delivery/GetDeliveryDetailsImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/phone/CheckModelAvailabilityImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/welcome/WelcomeUserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/google-java-format.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_12_2023,_21_36_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_12_2023__21_36__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-integration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-integration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/util/InputReaderUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/util/InputReaderUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customer/purchase/PurchaseSomethingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customer/purchase/PurchaseSomethingImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/SaveCustomerDataImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/SaveCustomerDataImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/delivery/GetDeliveryDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/delivery/GetDeliveryDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/IphoneData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/IphoneData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/delivery/steps/Learning.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/delivery/steps/Validator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="junit-assignment" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -35,6 +50,13 @@
     &quot;assignee&quot;: &quot;puvvadakrishna&quot;
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="develop" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -54,19 +76,35 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2agx0xUbIZgCKa7KSOT9cQEFu1t" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.AmazonShoppingImplTest.orderPhone_with_Product_NotFound.executor": "Run",
+    "JUnit.AmazonShoppingImplTest.orderPhone_with_confirmation_No.executor": "Run",
     "JUnit.AmazonShoppingImplTest.orderPhone_with_confirmation_yes.executor": "Run",
+    "JUnit.AmazonShoppingImplTest.whenDerivedExceptionThrown_thenAssertionSucceeds.executor": "Run",
+    "JUnit.CheckModelAvailabilityImplTest.executor": "Run",
+    "JUnit.CheckModelAvailabilityImplTest.test_InvalidData.executor": "Run",
+    "JUnit.GetDeliveryDetailsImplTest.executor": "Run",
+    "JUnit.PurchaseSomethingImplTest.executor": "Run",
+    "JUnit.PurchaseSomethingImplTest.placeOrderTest.executor": "Run",
+    "JUnit.SaveCustomerDataImplTest.executor": "Run",
+    "JUnit.WelcomeUserTest.executor": "Run",
+    "JUnit.WelcomeUserTest.welcomeTest.executor": "Run",
+    "JUnit.WelcomeUserTest.welcomeTest_WithNo.executor": "Run",
+    "JUnit.WelcomeUserTest.welcomeTest_With_Yes.executor": "Debug",
     "Maven.app [clean,install,-X].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "junit-retry",
     "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RunAnythingCache">
@@ -81,18 +119,79 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AmazonShoppingImplTest.orderPhone_with_confirmation_yes">
-    <configuration name="AmazonShoppingImplTest.orderPhone_with_confirmation_yes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Maven.app [clean,install,-X]">
+    <configuration name="CheckModelAvailabilityImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app-shopping" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shopping.amazon.*" />
+          <option name="PATTERN" value="com.shopping.phone.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shopping.amazon" />
-      <option name="MAIN_CLASS_NAME" value="com.shopping.amazon.AmazonShoppingImplTest" />
-      <option name="METHOD_NAME" value="orderPhone_with_confirmation_yes" />
+      <option name="PACKAGE_NAME" value="com.shopping.phone" />
+      <option name="MAIN_CLASS_NAME" value="com.shopping.phone.CheckModelAvailabilityImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetDeliveryDetailsImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app-shopping" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopping.delivery.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopping.delivery" />
+      <option name="MAIN_CLASS_NAME" value="com.shopping.delivery.GetDeliveryDetailsImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WelcomeUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app-shopping" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopping.welcome.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopping.welcome" />
+      <option name="MAIN_CLASS_NAME" value="com.shopping.welcome.WelcomeUserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WelcomeUserTest.welcomeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app-shopping" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopping.welcome.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopping.welcome" />
+      <option name="MAIN_CLASS_NAME" value="com.shopping.welcome.WelcomeUserTest" />
+      <option name="METHOD_NAME" value="welcomeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WelcomeUserTest.welcomeTest_WithNo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app-shopping" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopping.welcome.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopping.welcome" />
+      <option name="MAIN_CLASS_NAME" value="com.shopping.welcome.WelcomeUserTest" />
+      <option name="METHOD_NAME" value="welcomeTest_WithNo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,9 +242,21 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JUnit.CheckModelAvailabilityImplTest" />
+      <item itemvalue="JUnit.GetDeliveryDetailsImplTest" />
+      <item itemvalue="JUnit.WelcomeUserTest" />
+      <item itemvalue="JUnit.WelcomeUserTest.welcomeTest" />
+      <item itemvalue="JUnit.WelcomeUserTest.welcomeTest_WithNo" />
+      <item itemvalue="Maven.app [clean,install,-X]" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AmazonShoppingImplTest.orderPhone_with_confirmation_yes" />
+        <item itemvalue="JUnit.WelcomeUserTest.welcomeTest_WithNo" />
+        <item itemvalue="JUnit.WelcomeUserTest" />
+        <item itemvalue="JUnit.WelcomeUserTest.welcomeTest" />
+        <item itemvalue="JUnit.CheckModelAvailabilityImplTest" />
+        <item itemvalue="JUnit.GetDeliveryDetailsImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -178,15 +289,70 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java</url>
-          <line>30</line>
+          <line>31</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/app$SaveCustomerDataImplTest_saveNewUser.ic" NAME="SaveCustomerDataImplTest.saveNewUser Coverage Results" MODIFIED="1704811045206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shopping.customerdetails.save.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/app$AmazonShoppingImplTest.ic" NAME="AmazonShoppingImplTest Coverage Results" MODIFIED="1704814614779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/app$SaveCustomerDataImplTest.ic" NAME="SaveCustomerDataImplTest Coverage Results" MODIFIED="1704813907284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shopping.customerdetails.save.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/app$WelcomeUserTest_welcomeTest_With_Yes.ic" NAME="WelcomeUserTest.welcomeTest_With_Yes Coverage Results" MODIFIED="1704825744095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shopping.welcome.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/app$GetDeliveryDetailsImplTest_greaterNosTest.ic" NAME="GetDeliveryDetailsImplTest.greaterNosTest Coverage Results" MODIFIED="1704812097259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shopping.deliveryy.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/app$AmazonShoppingImplTest_orderPhone_with_confirmation_yes.ic" NAME="AmazonShoppingImplTest.orderPhone_with_confirmation_yes Coverage Results" MODIFIED="1704792411385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shopping.amazon.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/app$GetDeliveryDetailsImplTest_test.ic" NAME="GetDeliveryDetailsImplTest.test Coverage Results" MODIFIED="1704792372562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.shopping.deliveryy.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/app$SaveCustomerDataImplTest_getNameAndAdresstestwithFalseData.ic" NAME="SaveCustomerDataImplTest.getNameAndAdresstestwithFalseData Coverage Results" MODIFIED="1704811309370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.shopping.customerdetails.save.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/app$GetDeliveryDetailsImplTest.ic" NAME="GetDeliveryDetailsImplTest Coverage Results" MODIFIED="1704812680141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/app$AmazonShoppingImplTest.exec" NAME="AmazonShoppingImplTest Coverage Results" MODIFIED="1704814364807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

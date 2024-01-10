@@ -29,4 +29,13 @@ public class GetDeliveryDetailsImpl implements GetDeliveryDetails {
 			return true;
 		}
 	}
+//	public boolean greaterNos(int a)
+//	{
+//
+//		if(a>10)
+//		{
+//			return true;
+//		}
+//		return false;
+//	}
 }
