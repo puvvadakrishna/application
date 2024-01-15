@@ -17,7 +17,7 @@ public class Excel {
 
 	private static Logger log = LoggerFactory.getLogger(Excel.class);
 
-	public static void main(String[] args) {
+	public boolean excelCreation() {
 
 		try (XSSFWorkbook workbook = new XSSFWorkbook()) {
 			Sheet spreadsheet = workbook.createSheet(" customer Data ");
@@ -70,5 +70,6 @@ public class Excel {
 		}
 
 		log.info("report generated!!");
+		return true;
 	}
 }

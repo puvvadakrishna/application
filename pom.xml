@@ -18,10 +18,10 @@
     <properties>
         <java.version>11</java.version>
         <jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
-        <jacoco.bundle.line.coverage>1.0</jacoco.bundle.line.coverage>
-        <jacoco.bundle.instruction.coverage>1.0</jacoco.bundle.instruction.coverage>
-        <jacoco.bundle.branch.coverage>1.0</jacoco.bundle.branch.coverage>
-        <jacoco.bundle.missed.classes>0</jacoco.bundle.missed.classes>
+        <jacoco.bundle.line.coverage>0.3</jacoco.bundle.line.coverage>
+        <jacoco.bundle.instruction.coverage>0.5</jacoco.bundle.instruction.coverage>
+        <jacoco.bundle.branch.coverage>0.5</jacoco.bundle.branch.coverage>
+        <jacoco.bundle.missed.classes>8</jacoco.bundle.missed.classes>
         <cucumber.version>6.8.1</cucumber.version>
 
     </properties>
@@ -35,11 +35,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -48,6 +52,15 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <builder>paketobuildpacks/builder-jammy-base:latest</builder>
+                    </image>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -19,7 +19,7 @@ public class PurchaseSomethingImpl implements PurchaseSomething {
 
 	public boolean placeOrder(String details) {
 		log.info("pls enter the phone model  : ");
-		String phone = InputReaderUtil.readInput();
+		String phone = InputReaderUtil.readModel();
 		return as.orderPhone(phone, details);
 
 	}
