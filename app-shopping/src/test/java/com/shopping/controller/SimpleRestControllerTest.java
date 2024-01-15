@@ -28,45 +28,42 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(SimpleRestController.class)
-public class SimpleRestControllerTest {
+class SimpleRestControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-//    SimpleRestController src = new SimpleRestController();
-   @Test
+    @Test
     void helloTest() throws Exception {
 
-       RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
-               "/amazon/hello?name=ramu");
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.get(
+                "/amazon/hello?name=ramu");
 
-       MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-       String expected = "hello ramu";
-       assertEquals(expected, result.getResponse().getContentAsString());
-   }
-   @Test
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        String expected = "hello ramu";
+        assertEquals(expected, result.getResponse().getContentAsString());
+    }
+
+    @Test
     void getCustomerTest() throws Exception {
-       RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/amazon/customer?name=somu");
-       MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-       String expected =  "{\"customerName\":\"somu\",\"customerAddress\":\"guntur\",\"customerOrder\":null}";
-       assertEquals(expected,result.getResponse().getContentAsString());
-   }
-   @Test
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/amazon/customer?name=somu");
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        String expected = "{\"customerName\":\"somu\",\"customerAddress\":\"guntur\",\"customerOrder\":null}";
+        assertEquals(expected, result.getResponse().getContentAsString());
+    }
+
+    @Test
     void saveUserTest() throws Exception {
-       String customer =  "{\"customerName\":\"somu\",\"customerAddress\":\"guntur\",\"customerOrder\":null}";
-       RequestBuilder requestBuilder = MockMvcRequestBuilders
-               .post("/amazon/save")
-               .accept(MediaType.APPLICATION_JSON).content(customer)
-               .contentType(MediaType.APPLICATION_JSON);
+        String customer = "{\"customerName\":\"somu\",\"customerAddress\":\"guntur\",\"customerOrder\":null}";
+        RequestBuilder requestBuilder = MockMvcRequestBuilders
+                .post("/amazon/save")
+                .accept(MediaType.APPLICATION_JSON).content(customer)
+                .contentType(MediaType.APPLICATION_JSON);
 
-       MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
-       MockHttpServletResponse response = result.getResponse();
+        MockHttpServletResponse response = result.getResponse();
+        assertEquals(HttpStatus.CREATED.value(), response.getStatus());
 
-      assertEquals(HttpStatus.CREATED.value(), response.getStatus());
-
-//       assertEquals("http://localhost/amazon/save",
-//               response.getHeader(HttpHeaders.LOCATION));
-
-   }
+    }
 
 }

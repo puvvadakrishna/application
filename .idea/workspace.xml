@@ -5,32 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3082ff7e-e2b0-4967-b025-7df841ec4c7a" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/PhoneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/SimpleRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/entity/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/entity/PhoneModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/repo/EmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/repo/PhoneModelRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/controller/SimpleRestControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/resources/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/resources/startup-script.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-integration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-integration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-integration/src/test/resources/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app-integration/src/test/resources/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/ShoppingApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/ShoppingApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailability.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-integration/app-integration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app-integration/app-integration.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/app-shopping.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/app-shopping.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailabilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailabilityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/IphoneData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/Phone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/reportgeneration/Excel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/reportgeneration/Excel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/phone/CheckModelAvailabilityImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/phone/CheckModelAvailabilityImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/controller/SimpleRestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/controller/SimpleRestControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="junit-assignment" />
+        <entry key="$PROJECT_DIR$" value="junit-retry" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -125,7 +105,7 @@
     "Maven.app [clean,install,-X].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "junit-retry",
+    "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "D:/ws/app/app-shopping/src/main/java/com/shopping/entity",
     "last_opened_file_path": "D:/ws/app/app-shopping/src/test/resources",
@@ -161,7 +141,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ShoppingApiApplication">
+  <component name="RunManager" selected="JUnit.SimpleRestControllerTest">
     <configuration name="ShoppingApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shopping.ShoppingApiApplication" />
       <module name="app-shopping" />
@@ -316,7 +296,9 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <list>
@@ -330,17 +312,18 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ShoppingApiApplication" />
-        <item itemvalue="JUnit.SimpleRestControllerTest.saveUserTest" />
-        <item itemvalue="JUnit.SimpleRestControllerTest.getCustomerTest" />
         <item itemvalue="JUnit.SimpleRestControllerTest" />
+        <item itemvalue="JUnit.SimpleRestControllerTest.saveUserTest" />
         <item itemvalue="JUnit.SimpleRestControllerTest.helloTest" />
+        <item itemvalue="JUnit.SimpleRestControllerTest.getCustomerTest" />
+        <item itemvalue="Application.ShoppingApiApplication" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-e1d2075fd9a7-f66d43ae" />
         <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
       </set>
     </attachedChunks>
@@ -361,7 +344,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -401,7 +396,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/controller/SimpleRestControllerTest.java</url>
-          <line>62</line>
+          <line>63</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
