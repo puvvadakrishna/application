@@ -2,7 +2,7 @@ package com.shopping.phone;
 
 import com.shopping.exception.ProductNotFoundException;
 import com.shopping.phone.iphone.CheckModelAvailabilityImpl;
-import com.shopping.phone.iphone.IphoneData;
+import com.shopping.entity.PhoneModel;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -15,7 +15,7 @@ public class CheckModelAvailabilityImplTest {
 
     @Test
     void isModelAvailableTest() throws ProductNotFoundException {
-       assertEquals(new IphoneData("ip13", "30k", "pink").toString(),cmai.isModelAvailable("ip13").toString());
+       assertEquals(new PhoneModel("ip13", "30k", "pink").toString(),cmai.isModelAvailable("ip13").toString());
     }
     @Test
     void isModelAvailableTest_Exception() throws ProductNotFoundException {

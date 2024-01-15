@@ -5,24 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3082ff7e-e2b0-4967-b025-7df841ec4c7a" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/customer/PurchaseSomethingImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/customerdetails/SaveCustomerDataImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/delivery/GetDeliveryDetailsImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/phone/CheckModelAvailabilityImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/welcome/WelcomeUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/PhoneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/SimpleRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/entity/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/entity/PhoneModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/repo/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/repo/PhoneModelRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/controller/SimpleRestControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/resources/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/test/resources/startup-script.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-integration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-integration/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-integration/src/test/resources/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app-integration/src/test/resources/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/ShoppingApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/ShoppingApiApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/util/InputReaderUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/util/InputReaderUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customer/purchase/PurchaseSomethingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customer/purchase/PurchaseSomethingImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/SaveCustomerDataImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/SaveCustomerDataImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/delivery/GetDeliveryDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/delivery/GetDeliveryDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/IphoneData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/IphoneData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailability.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailabilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailabilityImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/IphoneData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/Phone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/reportgeneration/Excel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/reportgeneration/Excel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/delivery/steps/Learning.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/delivery/steps/Validator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/phone/CheckModelAvailabilityImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/phone/CheckModelAvailabilityImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -85,6 +96,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ShoppingApiApplication.executor": "Run",
+    "Docker.resources.mysql: Compose Deployment.executor": "Run",
+    "Docker.resources.oracle-db: Compose Deployment.executor": "Run",
+    "Docker.resources.oracle-std-service: Compose Deployment.executor": "Run",
+    "Docker.resources: Compose Deployment (1).executor": "Run",
+    "Docker.resources: Compose Deployment.executor": "Run",
     "JUnit.AmazonShoppingImplTest.orderPhone_with_Product_NotFound.executor": "Run",
     "JUnit.AmazonShoppingImplTest.orderPhone_with_confirmation_No.executor": "Run",
     "JUnit.AmazonShoppingImplTest.orderPhone_with_confirmation_yes.executor": "Run",
@@ -95,18 +112,43 @@
     "JUnit.PurchaseSomethingImplTest.executor": "Run",
     "JUnit.PurchaseSomethingImplTest.placeOrderTest.executor": "Run",
     "JUnit.SaveCustomerDataImplTest.executor": "Run",
+    "JUnit.SimpleRestControllerTest.executor": "Run",
+    "JUnit.SimpleRestControllerTest.getCustomerTest.executor": "Run",
+    "JUnit.SimpleRestControllerTest.helloTest.executor": "Run",
+    "JUnit.SimpleRestControllerTest.saveUserTest.executor": "Run",
     "JUnit.WelcomeUserTest.executor": "Run",
     "JUnit.WelcomeUserTest.welcomeTest.executor": "Run",
     "JUnit.WelcomeUserTest.welcomeTest_WithNo.executor": "Run",
     "JUnit.WelcomeUserTest.welcomeTest_With_Yes.executor": "Debug",
+    "Maven.app [clean,instal,-DskipTest].executor": "Run",
+    "Maven.app [clean,instal,-DskipTests=true].executor": "Run",
     "Maven.app [clean,install,-X].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "junit-retry",
     "kotlin-language-version-configured": "true",
+    "last_directory_selection": "D:/ws/app/app-shopping/src/main/java/com/shopping/entity",
+    "last_opened_file_path": "D:/ws/app/app-shopping/src/test/resources",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.shopping.exception" />
+      <recent name="com.shopping.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ws\app\app-shopping\src\test\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.shopping.entity" />
+      <recent name="com.shopping.controller" />
+      <recent name="com.shopping.repo" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="clean install -X" />
@@ -119,79 +161,78 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.app [clean,install,-X]">
-    <configuration name="CheckModelAvailabilityImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.ShoppingApiApplication">
+    <configuration name="ShoppingApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shopping.ShoppingApiApplication" />
       <module name="app-shopping" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shopping.phone.*" />
+          <option name="PATTERN" value="com.shopping.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shopping.phone" />
-      <option name="MAIN_CLASS_NAME" value="com.shopping.phone.CheckModelAvailabilityImplTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app-shopping" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopping.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopping.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.shopping.controller.SimpleRestControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetDeliveryDetailsImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleRestControllerTest.getCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app-shopping" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shopping.delivery.*" />
+          <option name="PATTERN" value="com.shopping.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shopping.delivery" />
-      <option name="MAIN_CLASS_NAME" value="com.shopping.delivery.GetDeliveryDetailsImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WelcomeUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app-shopping" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shopping.welcome.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shopping.welcome" />
-      <option name="MAIN_CLASS_NAME" value="com.shopping.welcome.WelcomeUserTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WelcomeUserTest.welcomeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app-shopping" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shopping.welcome.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shopping.welcome" />
-      <option name="MAIN_CLASS_NAME" value="com.shopping.welcome.WelcomeUserTest" />
-      <option name="METHOD_NAME" value="welcomeTest" />
+      <option name="PACKAGE_NAME" value="com.shopping.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.shopping.controller.SimpleRestControllerTest" />
+      <option name="METHOD_NAME" value="getCustomerTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WelcomeUserTest.welcomeTest_WithNo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimpleRestControllerTest.helloTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app-shopping" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.shopping.welcome.*" />
+          <option name="PATTERN" value="com.shopping.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.shopping.welcome" />
-      <option name="MAIN_CLASS_NAME" value="com.shopping.welcome.WelcomeUserTest" />
-      <option name="METHOD_NAME" value="welcomeTest_WithNo" />
+      <option name="PACKAGE_NAME" value="com.shopping.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.shopping.controller.SimpleRestControllerTest" />
+      <option name="METHOD_NAME" value="helloTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleRestControllerTest.saveUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app-shopping" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shopping.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.shopping.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.shopping.controller.SimpleRestControllerTest" />
+      <option name="METHOD_NAME" value="saveUserTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -209,6 +250,38 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="app [clean,instal,-DskipTests=true]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="instal" />
+                <option value="-DskipTests=true" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
     <configuration name="app [clean,install,-X]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
@@ -242,21 +315,26 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="JUnit.CheckModelAvailabilityImplTest" />
-      <item itemvalue="JUnit.GetDeliveryDetailsImplTest" />
-      <item itemvalue="JUnit.WelcomeUserTest" />
-      <item itemvalue="JUnit.WelcomeUserTest.welcomeTest" />
-      <item itemvalue="JUnit.WelcomeUserTest.welcomeTest_WithNo" />
+      <item itemvalue="Application.ShoppingApiApplication" />
+      <item itemvalue="JUnit.SimpleRestControllerTest" />
+      <item itemvalue="JUnit.SimpleRestControllerTest.getCustomerTest" />
+      <item itemvalue="JUnit.SimpleRestControllerTest.helloTest" />
+      <item itemvalue="JUnit.SimpleRestControllerTest.saveUserTest" />
+      <item itemvalue="Maven.app [clean,instal,-DskipTests=true]" />
       <item itemvalue="Maven.app [clean,install,-X]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WelcomeUserTest.welcomeTest_WithNo" />
-        <item itemvalue="JUnit.WelcomeUserTest" />
-        <item itemvalue="JUnit.WelcomeUserTest.welcomeTest" />
-        <item itemvalue="JUnit.CheckModelAvailabilityImplTest" />
-        <item itemvalue="JUnit.GetDeliveryDetailsImplTest" />
+        <item itemvalue="Application.ShoppingApiApplication" />
+        <item itemvalue="JUnit.SimpleRestControllerTest.saveUserTest" />
+        <item itemvalue="JUnit.SimpleRestControllerTest.getCustomerTest" />
+        <item itemvalue="JUnit.SimpleRestControllerTest" />
+        <item itemvalue="JUnit.SimpleRestControllerTest.helloTest" />
       </list>
     </recent_temporary>
   </component>
@@ -302,29 +380,29 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java</url>
-          <line>28</line>
+          <line>27</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java</url>
-          <line>37</line>
+          <line>36</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java</url>
           <line>55</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/EmployeeController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/controller/SimpleRestControllerTest.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
