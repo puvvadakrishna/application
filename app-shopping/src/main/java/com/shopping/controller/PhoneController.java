@@ -1,11 +1,13 @@
 package com.shopping.controller;
 
+
 import com.shopping.exception.ProductNotFoundException;
 import com.shopping.phone.iphone.CheckModelAvailability;
 import com.shopping.entity.PhoneModel;
 import com.shopping.repo.PhoneModelRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import com.shopping.service.PhoneService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,21 +16,21 @@ import java.util.Optional;
 @RestController
 @RequestMapping("phone")
 public class PhoneController {
-    @Autowired
+    private static final Logger LOGGER = LoggerFactory.getLogger(PhoneController.class);
     private CheckModelAvailability cma;
-    @Autowired
-    PhoneModelRepository modelRepository;
+
+    private final PhoneModelRepository modelRepository;
+
+    private final PhoneService phoneservice;
+
+    public PhoneController(PhoneModelRepository modelRepository, PhoneService phoneservice) {
+        this.modelRepository = modelRepository;
+        this.phoneservice = phoneservice;
+    }
 
     @GetMapping("/model")
     public PhoneModel getModel(@RequestParam String modelNo) throws ProductNotFoundException {
-        PhoneModel data = cma.isModelAvailable(modelNo);
-        return data;
-    }
-
-    @PostMapping("/saveOne")
-    public ResponseEntity saveModel(@RequestBody PhoneModel data) throws ProductNotFoundException {
-        return ResponseEntity.ok().body(data);
-
+        return cma.isModelAvailable(modelNo);
     }
 
     @GetMapping("/all")
@@ -37,15 +39,13 @@ public class PhoneController {
     }
 
     @PostMapping("/save")
-    public PhoneModel saveModelInRepo(@RequestBody PhoneModel data) throws ProductNotFoundException {
-        return modelRepository.save(data);
-
-    }
+    public PhoneModel saveModelInRepo(@RequestBody PhoneModel data) {
+        return phoneservice.savePhone(data);
+         }
 
     @PostMapping("/saveall")
-    public List<PhoneModel> saveInRepo(@RequestBody List<PhoneModel> data) throws ProductNotFoundException {
-        return modelRepository.saveAll(data);
-
+    public List<PhoneModel> saveInRepo(@RequestBody List<PhoneModel> data)  {
+        return phoneservice.savePhones(data);
     }
 
     @GetMapping("/findmodelno")
@@ -63,14 +63,10 @@ public class PhoneController {
         return modelRepository.findBymodelPrice(modelPrice);
     }
 
-    // @GetMapping("/{id}")
-//    public Optional<PhoneModel> getid(@PathVariable Long id) {
-//        return modelRepository.findById(id);
-//    }
     @GetMapping("/{id}")
     public Optional<PhoneModel> getById(@PathVariable Long id) throws ProductNotFoundException {
         Optional<PhoneModel> res = modelRepository.findById(id);
-        System.out.println(res);
+        LOGGER.info("{}",res);
         if (res.isEmpty()) {
             throw new ProductNotFoundException("Requested resource is not found " + id);
         }

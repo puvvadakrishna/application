@@ -11,8 +11,8 @@ public class ShoppingApiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = SpringApplication.run(ShoppingApiApplication.class, args);
-//		WelcomeUser wl =  applicationContext.getBean(WelcomeUser.class);
-//		wl.welcome("");
+	WelcomeUser wl =  applicationContext.getBean(WelcomeUser.class);
+		wl.welcome();
 	}
 
 }

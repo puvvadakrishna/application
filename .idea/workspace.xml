@@ -5,13 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3082ff7e-e2b0-4967-b025-7df841ec4c7a" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/practice/java8/CustomComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/practice/java8/Numbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/practice/java8/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/service/PhoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/service/PhoneServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-integration/app-integration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app-integration/app-integration.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-shopping/app-shopping.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/app-shopping.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/ShoppingApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/ShoppingApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/PhoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/PhoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/SimpleRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/SimpleRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customer/purchase/PurchaseSomethingImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customer/purchase/PurchaseSomethingImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/SaveCustomerDataImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/customerdetails/save/SaveCustomerDataImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/delivery/GetDeliveryDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/delivery/GetDeliveryDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/deliverypartner/DeliveryHubImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/deliverypartner/DeliveryHubImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/entity/PhoneModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/entity/PhoneModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailability.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailability.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailabilityImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/phone/iphone/CheckModelAvailabilityImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/controller/SimpleRestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/controller/SimpleRestControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/welcome/WelcomeUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +77,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -76,6 +93,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CustomComparator.executor": "Run",
+    "Application.Numbers.executor": "Run",
     "Application.ShoppingApiApplication.executor": "Run",
     "Docker.resources.mysql: Compose Deployment.executor": "Run",
     "Docker.resources.oracle-db: Compose Deployment.executor": "Run",
@@ -105,7 +124,7 @@
     "Maven.app [clean,install,-X].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "adding-bussiness-logic",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "D:/ws/app/app-shopping/src/main/java/com/shopping/entity",
     "last_opened_file_path": "D:/ws/app/app-shopping/src/test/resources",
@@ -115,6 +134,23 @@
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\RAMA\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
+        <option name="reportGuid" value="331f20c7-9335-4995-8b74-21e857e7fe8f" />
+        <option name="reportName" value="app/qodana/2024-01-16" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\RAMA\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="331f20c7-9335-4995-8b74-21e857e7fe8f" reportId="app/qodana/2024-01-16" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.shopping.exception" />
@@ -141,7 +177,33 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SimpleRestControllerTest">
+  <component name="RunManager" selected="Application.ShoppingApiApplication">
+    <configuration name="CustomComparator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.practice.java8.CustomComparator" />
+      <module name="app-shopping" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.practice.java8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Numbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.practice.java8.Numbers" />
+      <module name="app-shopping" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.practice.java8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ShoppingApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shopping.ShoppingApiApplication" />
       <module name="app-shopping" />
@@ -166,38 +228,6 @@
       <option name="PACKAGE_NAME" value="com.shopping.controller" />
       <option name="MAIN_CLASS_NAME" value="com.shopping.controller.SimpleRestControllerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SimpleRestControllerTest.getCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app-shopping" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shopping.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shopping.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.shopping.controller.SimpleRestControllerTest" />
-      <option name="METHOD_NAME" value="getCustomerTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SimpleRestControllerTest.helloTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="app-shopping" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.shopping.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.shopping.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.shopping.controller.SimpleRestControllerTest" />
-      <option name="METHOD_NAME" value="helloTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -302,29 +332,28 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.CustomComparator" />
+      <item itemvalue="Application.Numbers" />
       <item itemvalue="Application.ShoppingApiApplication" />
       <item itemvalue="JUnit.SimpleRestControllerTest" />
-      <item itemvalue="JUnit.SimpleRestControllerTest.getCustomerTest" />
-      <item itemvalue="JUnit.SimpleRestControllerTest.helloTest" />
       <item itemvalue="JUnit.SimpleRestControllerTest.saveUserTest" />
       <item itemvalue="Maven.app [clean,instal,-DskipTests=true]" />
       <item itemvalue="Maven.app [clean,install,-X]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShoppingApiApplication" />
+        <item itemvalue="Application.Numbers" />
+        <item itemvalue="Application.CustomComparator" />
         <item itemvalue="JUnit.SimpleRestControllerTest" />
         <item itemvalue="JUnit.SimpleRestControllerTest.saveUserTest" />
-        <item itemvalue="JUnit.SimpleRestControllerTest.helloTest" />
-        <item itemvalue="JUnit.SimpleRestControllerTest.getCustomerTest" />
-        <item itemvalue="Application.ShoppingApiApplication" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-e1d2075fd9a7-f66d43ae" />
-        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
+        <option value="jdk-17.0.9-jbrsdk-17.0.9-f644763e9732-26399851" />
       </set>
     </attachedChunks>
   </component>
@@ -371,33 +400,42 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java</url>
-          <line>31</line>
+          <line>33</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java</url>
-          <line>27</line>
+          <line>30</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/amazon/AmazonShoppingImpl.java</url>
-          <line>36</line>
+          <line>41</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/amazon/AmazonShoppingImplTest.java</url>
-          <line>55</line>
+          <line>57</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/controller/EmployeeController.java</url>
-          <line>23</line>
+          <line>26</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app-shopping/src/test/java/com/shopping/controller/SimpleRestControllerTest.java</url>
           <line>63</line>
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/app-shopping/src/main/java/com/shopping/service/PhoneService.java</url>
+          <line>10</line>
+          <properties class="com.shopping.service.PhoneService" method="convertModelColourToUpper">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
