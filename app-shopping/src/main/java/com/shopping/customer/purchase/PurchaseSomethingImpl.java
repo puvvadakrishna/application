@@ -13,12 +13,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class PurchaseSomethingImpl implements PurchaseSomething {
 
-	private Logger log = LoggerFactory.getLogger(PurchaseSomethingImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(PurchaseSomethingImpl.class);
 
-	private AmazonShopping as;
+	private final AmazonShopping as;
 
 	public boolean placeOrder(String details) {
-		log.info("pls enter the phone model  : ");
+		LOGGER.info("pls enter the phone model  : ");
 		String phone = InputReaderUtil.readModel();
 		return as.orderPhone(phone, details);
 

@@ -2,6 +2,7 @@ package com.shopping.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
@@ -13,6 +14,7 @@ import java.io.Serializable;
 @Setter
 @Getter
 @ToString
+@NoArgsConstructor
 public class PhoneModel implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "model_gen")
@@ -25,9 +27,6 @@ public class PhoneModel implements Serializable {
 	@NotBlank
 	private String modelPrice;
 
-	public PhoneModel() {
-
-	}
 
 	public PhoneModel(String modelNo, String modelPrice, String modelColour) {
 

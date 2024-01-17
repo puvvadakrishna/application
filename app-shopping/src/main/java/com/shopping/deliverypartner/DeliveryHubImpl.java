@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class DeliveryHubImpl implements DeliveryHub {
 
-	private Logger log = LoggerFactory.getLogger(DeliveryHubImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(DeliveryHubImpl.class);
 
 	@Override
 	public String deliver(String customerName, String address) {
-		log.info("IPhone delivered to {} address {} ", customerName, address);
+		LOGGER.info("IPhone delivered to {} address {} ", customerName, address);
 
 
 		return "delivered to " +address;

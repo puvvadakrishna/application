@@ -2,6 +2,7 @@ package com.shopping.customerdetails.save;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
@@ -12,13 +13,8 @@ public class SaveCustomerDataImpl implements SaveCustomerData {
 			new Customer("Kush", "London"));
 
 	public String getNameAndAdress(String name) {
-		for (int i = 0; i < details.size(); i++) {
-			Customer c = details.get(i);
-			if (c.getCustomerName().equalsIgnoreCase(name)) {
-				return c.getCustomerAddress();
-			}
-		}
-		return "";
+	return details.stream().filter(i->i.getCustomerName().equalsIgnoreCase(name)).map(i->i.getCustomerAddress()).collect(Collectors.joining(", "));
+
 	}
 	public String saveNewUser(String name, String adress) {
 		details.set(1,new Customer(name, adress));

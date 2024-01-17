@@ -18,6 +18,8 @@ import com.shopping.exception.ProductNotFoundException;
 import com.shopping.phone.iphone.CheckModelAvailability;
 import com.shopping.entity.PhoneModel;
 
+import java.util.Optional;
+
 @ExtendWith(MockitoExtension.class)
 class AmazonShoppingImplTest {
 
@@ -32,7 +34,7 @@ class AmazonShoppingImplTest {
     @Test
     void orderPhone_with_confirmation_yes() throws ProductNotFoundException {
         when(getDeliveryDetails.deliverOrder(anyString())).thenReturn(true);
-        when(checkModelAvailability.isModelAvailable(anyString())).thenReturn(new PhoneModel("ip13", "2000", "white"));
+        when(checkModelAvailability.isModelAvailable(anyString())).thenReturn(Optional.of(new PhoneModel("ip13", "2000", "white")));
         try (MockedStatic<InputReaderUtil> utilities = Mockito.mockStatic(InputReaderUtil.class)) {
             utilities.when(InputReaderUtil::readConfirmation).thenReturn("Y");
             boolean result = as.orderPhone("ip13", "somu");
@@ -44,7 +46,7 @@ class AmazonShoppingImplTest {
     @Test
     void orderPhone_with_confirmation_No() throws ProductNotFoundException {
 
-        when(checkModelAvailability.isModelAvailable(anyString())).thenReturn(new PhoneModel("ip13", "2000", "white"));
+        when(checkModelAvailability.isModelAvailable(anyString())).thenReturn(Optional.of(new PhoneModel("ip13", "2000", "white")));
         try (MockedStatic<InputReaderUtil> utilities = Mockito.mockStatic(InputReaderUtil.class)) {
             utilities.when(InputReaderUtil::readConfirmation).thenReturn("N");
             boolean result = as.orderPhone("ip13", "somu");
@@ -54,7 +56,7 @@ class AmazonShoppingImplTest {
     }
 
     @Test
-    public void whenDerivedExceptionThrown_thenAssertionSucceeds() {
+     void whenDerivedExceptionThrown_thenAssertionSucceeds() {
         try {
             when(checkModelAvailability.isModelAvailable(anyString())).thenThrow(new ProductNotFoundException("OUT OF STOCK"));
         } catch (ProductNotFoundException e) {
