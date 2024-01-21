@@ -15,7 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.shopping.amazon.util.InputReaderUtil;
 import com.shopping.delivery.GetDeliveryDetails;
 import com.shopping.exception.ProductNotFoundException;
-import com.shopping.phone.iphone.CheckModelAvailability;
+import com.shopping.phone.CheckModelAvailability;
 import com.shopping.entity.PhoneModel;
 
 import java.util.Optional;
