@@ -2,7 +2,7 @@ package com.shopping.controller;
 
 
 import com.shopping.exception.ProductNotFoundException;
-import com.shopping.phone.iphone.CheckModelAvailability;
+import com.shopping.phone.CheckModelAvailability;
 import com.shopping.entity.PhoneModel;
 import com.shopping.repo.PhoneModelRepository;
 import com.shopping.service.PhoneService;
@@ -29,7 +29,7 @@ public class PhoneController {
     }
 
     @GetMapping("/model")
-    public PhoneModel getModel(@RequestParam String modelNo) throws ProductNotFoundException {
+    public Optional<PhoneModel> getModel(@RequestParam String modelNo) throws ProductNotFoundException {
         return cma.isModelAvailable(modelNo);
     }
 
@@ -41,16 +41,16 @@ public class PhoneController {
     @PostMapping("/save")
     public PhoneModel saveModelInRepo(@RequestBody PhoneModel data) {
         return phoneservice.savePhone(data);
-         }
+    }
 
     @PostMapping("/saveall")
-    public List<PhoneModel> saveInRepo(@RequestBody List<PhoneModel> data)  {
+    public List<PhoneModel> saveInRepo(@RequestBody List<PhoneModel> data) {
         return phoneservice.savePhones(data);
     }
 
     @GetMapping("/findmodelno")
-    public List<PhoneModel> getModelByModelNo(@RequestParam String modelNo) {
-        return modelRepository.findByModelNo(modelNo);
+    public PhoneModel getModelByModelNo(@RequestParam String modelNo) {
+        return phoneservice.getPhoneModelByModelNo(modelNo);
     }
 
     @GetMapping("/findmodelcolour")
@@ -66,7 +66,7 @@ public class PhoneController {
     @GetMapping("/{id}")
     public Optional<PhoneModel> getById(@PathVariable Long id) throws ProductNotFoundException {
         Optional<PhoneModel> res = modelRepository.findById(id);
-        LOGGER.info("{}",res);
+        LOGGER.info("{}", res);
         if (res.isEmpty()) {
             throw new ProductNotFoundException("Requested resource is not found " + id);
         }

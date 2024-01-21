@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PhoneModelRepository extends JpaRepository<PhoneModel, Long> {
 
-    List<PhoneModel> findByModelNo(String modelNo);
+    PhoneModel findByModelNo(String modelNo);
 
     List<PhoneModel> findByModelColour(String modelColour);
 
