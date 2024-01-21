@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import com.shopping.amazon.util.InputReaderUtil;
 import com.shopping.delivery.GetDeliveryDetails;
 import com.shopping.exception.ProductNotFoundException;
-import com.shopping.phone.iphone.CheckModelAvailability;
+import com.shopping.phone.CheckModelAvailability;
 import com.shopping.entity.PhoneModel;
 
 import lombok.RequiredArgsConstructor;
@@ -29,7 +29,7 @@ public class AmazonShoppingImpl implements AmazonShopping {
         try {
 
             Optional<PhoneModel> phone = sid.isModelAvailable(phoneModel);
-            if(phone.isPresent()) {
+            if (phone.isPresent()) {
                 LOGGER.info("selected product details are {}", phone);
                 LOGGER.info("Do you want to purchase Y/N");
                 String input = InputReaderUtil.readConfirmation();

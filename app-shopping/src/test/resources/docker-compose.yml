@@ -1,15 +1,4 @@
-version: '3.9'
+docker run -d -p 8085:8080 -p 1521:1521 -v D:/oracle/oradata:/u01/app/oracle truevoly/oracle-12c
 
-services:
-  mysql:
-    container_name: mysql
-    image: mysql:8
-    ports:
-      - 3306:3306
-    volumes:
-      - D:/oracle:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=S3cret
-      - MYSQL_PASSWORD=password
-      - MYSQL_USER=user
-      - MYSQL_DATABASE=node
+
+docker pull truevoly/oracle-12c

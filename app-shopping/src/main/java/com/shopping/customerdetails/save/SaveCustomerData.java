@@ -1,8 +1,8 @@
 package com.shopping.customerdetails.save;
 
 public interface SaveCustomerData {
-	String getNameAndAdress(String model);
+    String getNameAndAdress(String model);
 
-	 String saveNewUser(String name, String adress);
+    String saveNewUser(String name, String adress);
 
 }

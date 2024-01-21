@@ -24,8 +24,8 @@ public class CustomComparator {
         personList.add(new Person("somu", 35));
         personList.add(new Person("kush", 3));
         Collections.sort(personList, CustomComparator::compareByName);
-        personList.stream().map(s->s.getName()).forEach(System.out::println);
+        personList.stream().map(s -> s.getName()).forEach(System.out::println);
         Collections.sort(personList, CustomComparator::compareByAge);
-        personList.stream().map(s->s.getAge()).forEach(System.out::println);
+        personList.stream().map(s -> s.getAge()).forEach(System.out::println);
     }
 }

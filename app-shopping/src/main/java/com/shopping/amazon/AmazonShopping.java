@@ -1,8 +1,7 @@
 package com.shopping.amazon;
 
-public interface AmazonShopping
-{
+public interface AmazonShopping {
 
-	boolean orderPhone(String phoneModel, String details);
+    boolean orderPhone(String phoneModel, String details);
 
 }

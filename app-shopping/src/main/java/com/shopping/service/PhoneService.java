@@ -11,4 +11,6 @@ public interface PhoneService {
     PhoneModel savePhone(PhoneModel data);
 
     List<PhoneModel> savePhones(List<PhoneModel> data);
+
+    PhoneModel getPhoneModelByModelNo(String modelNo);
 }

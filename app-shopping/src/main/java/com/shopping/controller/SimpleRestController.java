@@ -12,7 +12,7 @@ public class SimpleRestController {
     @GetMapping("/hello")
     public ResponseEntity<String> hello(@RequestParam String name) {
 
-        return ResponseEntity.ok().body("hello "+name);
+        return ResponseEntity.ok().body("hello " + name);
     }
 
     @GetMapping("/customer")

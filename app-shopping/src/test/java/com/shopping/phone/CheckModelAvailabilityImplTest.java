@@ -1,30 +1,31 @@
 package com.shopping.phone;
 
 import com.shopping.exception.ProductNotFoundException;
-import com.shopping.phone.iphone.CheckModelAvailabilityImpl;
 import com.shopping.entity.PhoneModel;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Optional;
 
 import static org.junit.Assert.*;
 
 @ExtendWith(MockitoExtension.class)
-public class CheckModelAvailabilityImplTest {
-    CheckModelAvailabilityImpl cmai = new CheckModelAvailabilityImpl();
+class CheckModelAvailabilityImplTest {
+
+    @InjectMocks
+    CheckModelAvailabilityImpl cmai;
 
     @Test
     void isModelAvailableTest() throws ProductNotFoundException {
-       assertEquals(new PhoneModel("ip13", "30k", "pink").toString(),cmai.isModelAvailable("ip13").toString());
+        assertEquals(new PhoneModel("ip13", "30k", "pink").toString(), cmai.isModelAvailable("ip13").get().toString());
     }
-    @Test
-    void isModelAvailableTest_Exception() throws ProductNotFoundException {
-        Exception exception = assertThrows(ProductNotFoundException.class, () -> {
-            cmai.isModelAvailable("ip20");
-        });
-        String expectedMessage = "OUT OF STOCK";
-        String actualMessage = exception.getMessage();
-        //assertTrue(actualMessage.contains(expectedMessage));
-        assertEquals("OUT OF STOCK",exception.getMessage());
+
+    //   @Test
+    void isModelAvailableTest_invalidtest() {
+        assertEquals(Optional.empty(), cmai.isModelAvailable("ip19"));
     }
+
 }

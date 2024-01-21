@@ -15,36 +15,36 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class WelcomeUser {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(WelcomeUser.class);
-	private final SaveCustomerData scd;
-	private final PurchaseSomething ps;
+    private static final Logger LOGGER = LoggerFactory.getLogger(WelcomeUser.class);
+    private final SaveCustomerData scd;
+    private final PurchaseSomething ps;
 
-	public boolean welcome() {
-		LOGGER.info("Hello welcome to Amazon,Are you new user ? y/n ");
-		String input = InputReaderUtil.readConfirmation();
-		if (input.equals("y")) {
-			String result = newUser();
-			return ps.placeOrder(result);
-		} else {
-			LOGGER.info("pls enter your name : ");
-			String name = InputReaderUtil.readName();
-			LOGGER.info("Welcome {}", name);
-			return ps.placeOrder(name);
+    public boolean welcome() {
+        LOGGER.info("Hello welcome to Amazon,Are you new user ? y/n ");
+        String input = InputReaderUtil.readConfirmation();
+        if (input.equals("y")) {
+            String result = newUser();
+            return ps.placeOrder(result);
+        } else {
+            LOGGER.info("pls enter your name : ");
+            String name = InputReaderUtil.readName();
+            LOGGER.info("Welcome {}", name);
+            return ps.placeOrder(name);
 
-		}
+        }
 
-	}
+    }
 
-	private String newUser() {
+    private String newUser() {
 
-		LOGGER.info("pls register your details : ");
-		LOGGER.info("pls enter your name : ");
-		String name = InputReaderUtil.readName();
-		LOGGER.info("Pls enter your address : ");
-		String address = InputReaderUtil.readAddress();
-		LOGGER.info("Thank you for registration,pls continue shopping");
-		return scd.saveNewUser(name, address);
+        LOGGER.info("pls register your details : ");
+        LOGGER.info("pls enter your name : ");
+        String name = InputReaderUtil.readName();
+        LOGGER.info("Pls enter your address : ");
+        String address = InputReaderUtil.readAddress();
+        LOGGER.info("Thank you for registration,pls continue shopping");
+        return scd.saveNewUser(name, address);
 
-	}
+    }
 
 }

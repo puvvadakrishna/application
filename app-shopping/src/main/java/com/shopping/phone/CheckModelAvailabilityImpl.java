@@ -1,12 +1,11 @@
-package com.shopping.phone.iphone;
+package com.shopping.phone;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 import com.shopping.entity.PhoneModel;
 import org.springframework.stereotype.Component;
-import com.shopping.exception.ProductNotFoundException;
-
 
 @Component
 public class CheckModelAvailabilityImpl implements CheckModelAvailability {
@@ -15,8 +14,13 @@ public class CheckModelAvailabilityImpl implements CheckModelAvailability {
             new PhoneModel("ip13", "30k", "pink"), new PhoneModel("ip14", "40k", "Black"),
             new PhoneModel("ip15", "50k", "Pink"), new PhoneModel("ip6", "60k", "Grey"));
 
-    public  Optional<PhoneModel> isModelAvailable(String modelNo) {
-        return Optional.ofNullable(phoneData.stream().filter(i -> i.getModelNo().equalsIgnoreCase(modelNo))
+    public Optional<PhoneModel> isModelAvailable(String modelNo) {
+
+
+        Predicate<PhoneModel> phoneModelPredicate = phoneModel -> phoneModel.getModelNo().equalsIgnoreCase(modelNo);
+
+
+        return Optional.ofNullable(phoneData.stream().filter(phoneModelPredicate)
                 .findFirst()
                 .orElse(null));
 
