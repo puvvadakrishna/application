@@ -1,12 +1,14 @@
 package com.shopping.service;
 
 import com.shopping.entity.PhoneModel;
+import com.shopping.exception.ModelNotFoundException;
 import com.shopping.repo.PhoneModelRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -47,4 +49,23 @@ public class PhoneServiceImpl implements PhoneService {
         return modle;
     }
 
+    public Long addPhone(PhoneModel pm)
+    {
+        return modelRepository.save(pm).getId();
+    }
+
+    public void deletePhone(String modelPrice)
+    {
+        modelRepository.deleteBymodelPrice(modelPrice);
+    }
+
+    @Override
+    public List<PhoneModel> findByModelColour(String modelColour) {
+        List<PhoneModel> pm = modelRepository.findByModelColour(modelColour);
+        if (!pm.isEmpty()) {
+            return pm;
+        } else {
+            throw new ModelNotFoundException("colour not found :"+modelColour);
+        }
+    }
 }

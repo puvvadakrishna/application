@@ -8,6 +8,8 @@ import com.shopping.repo.PhoneModelRepository;
 import com.shopping.service.PhoneService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -55,8 +57,8 @@ public class PhoneController {
 
     @GetMapping("/findmodelcolour")
     public List<PhoneModel> getModelByColour(@RequestParam String modelColour) {
-        return modelRepository.findByModelColour(modelColour);
-    }
+        return phoneservice.findByModelColour(modelColour);
+           }
 
     @GetMapping("/findmodelprice")
     public List<PhoneModel> getModelByPrice(@RequestParam String modelPrice) {
@@ -71,6 +73,18 @@ public class PhoneController {
             throw new ProductNotFoundException("Requested resource is not found " + id);
         }
         return res;
+    }
+    @PutMapping("/savemodelno")
+    public ResponseEntity<String> update(@RequestBody  PhoneModel pm)
+    {
+        Long id = phoneservice.addPhone(pm);
+        return new ResponseEntity<>("New phone added to Database : " + id, HttpStatus.CREATED);
+
+    }
+    @DeleteMapping("/patients")
+    public ResponseEntity<String> deletePhoneData(@RequestParam String modelPrice) {
+        phoneservice.deletePhone(modelPrice);
+        return new ResponseEntity<>("Phone deleted "+modelPrice, HttpStatus.CREATED);
     }
 
 }

@@ -7,3 +7,5 @@ import org.springframework.context.annotation.Configuration;
 @EnableCaching
 public class CacheConfig {
 }
+//LFU-least  frequently used(resource in .xml) used
+//Fifo

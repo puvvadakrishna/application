@@ -25,6 +25,7 @@ public class SimpleRestController {
     @PostMapping("/save")
     public ResponseEntity<Customer> saveUser(@RequestBody Customer customer) {
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+       // return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+            return ResponseEntity.created(null).build();
     }
-}
+  }
