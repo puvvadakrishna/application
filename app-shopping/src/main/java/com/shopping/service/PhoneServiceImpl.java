@@ -3,12 +3,12 @@ package com.shopping.service;
 import com.shopping.entity.PhoneModel;
 import com.shopping.exception.ModelNotFoundException;
 import com.shopping.repo.PhoneModelRepository;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -53,7 +53,7 @@ public class PhoneServiceImpl implements PhoneService {
     {
         return modelRepository.save(pm).getId();
     }
-
+    @Transactional
     public void deletePhone(String modelPrice)
     {
         modelRepository.deleteBymodelPrice(modelPrice);
