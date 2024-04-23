@@ -16,5 +16,3 @@ public class Child extends Parent {
 		return a;
 		}
 }
-
-//21

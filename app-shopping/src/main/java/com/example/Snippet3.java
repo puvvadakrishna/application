@@ -31,6 +31,8 @@ class Employee {
 
 public class Snippet3 {
 
+    //provide psuedo code to get list of Departments for a given name
+
     public List<Department> getDepartments(String name) {
 
 
@@ -39,9 +41,26 @@ public class Snippet3 {
                 new Employee("tom", List.of(new Department("INVOICE"), new Department("LEGAL"))),
                 new Employee("liam", List.of(new Department("SPORTS"), new Department("LEGAL"))));
 
-        // 1. provide psuedo code to get list of Departments for a given name
-        // 2. provide code to get the Department with name SPORTS
+        //provide psuedo code to get list of Departments for a given name
 
+        List<Department> departments = employess.stream()
+                .filter(emp -> emp.getName().equalsIgnoreCase(name))
+                .map(Employee::getDepartment)
+                .findFirst()
+                .orElse(List.of());
+        Department dept = employess.stream()
+                .filter(emp -> emp.getName().equalsIgnoreCase(name))
+                .flatMap(employee -> employee.getDepartment().stream())
+                .filter(department -> department.getName().equalsIgnoreCase("SPORTS"))
+                .findAny().orElse(null);
+
+        return null;
     }
 
+    public static void main(String args[]){
+
+
+        Snippet3 a = new Snippet3();
+        a.getDepartments("liam");
+    }
 }
