@@ -1,9 +1,10 @@
 package com.shopping.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "phoneModel")

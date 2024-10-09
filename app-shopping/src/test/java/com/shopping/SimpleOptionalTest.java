@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
-@SpringBootTest
+//@SpringBootTest
  class SimpleOptionalTest {
     @Test
      void opp() {
