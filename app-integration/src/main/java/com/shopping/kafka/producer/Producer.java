@@ -23,7 +23,7 @@ public class Producer {
     private KafkaTemplate kafkaTemplate;
 
     public void sendMessageAsync(Order order) throws ExecutionException, InterruptedException {
-        CompletableFuture<SendResult<String, Order>> result = kafkaTemplate.send(AppConstants.TOPIC_JSON, order.getId(), order);
+        CompletableFuture<SendResult<String, Order>> result = (CompletableFuture<SendResult<String, Order>>) kafkaTemplate.send(AppConstants.TOPIC_JSON, order.getId(), order);
         //kafkaTemplate.send(AppConstants.TOPIC_JSON, "test-message");
         //kafkaTemplate.send(AppConstants.TOPIC_JSON, 1);
         //result.get();-- to hold the sync call until message is sent

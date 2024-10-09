@@ -1,32 +1,13 @@
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://www.ehcache.org/v3"
-        xmlns:jsr107="http://www.ehcache.org/v3/jsr107"
-        xsi:schemaLocation="
-            http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd
-            http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.0.xsd">
-
-    <cache alias="testCache">
-        <key-type>java.util.ArrayList</key-type>
-        <value-type>com.shopping.entity.PhoneModel</value-type>
-        <expiry>
-            <ttl unit="seconds">60</ttl>
-        </expiry>
-
-        <listeners>
-            <listener>
-                <class>com.shopping.config.CacheEventLogger</class>
-                <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
-                <event-ordering-mode>UNORDERED</event-ordering-mode>
-                <events-to-fire-on>CREATED</events-to-fire-on>
-                <events-to-fire-on>EXPIRED</events-to-fire-on>
-            </listener>
-        </listeners>
-
-        <resources>
-            <heap unit="entries">1</heap>
-            <offheap unit="MB">1</offheap>
-        </resources>
-    </cache>
-
-</config>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+    <defaultCache maxElementsInMemory="10000"
+                  overflowToDisk="false"
+                  memoryStoreEvictionPolicy="LRU"
+                  maxElementsOnDisk="10000000"
+                  diskExpiryThreadIntervalSeconds="600"
+                  timeToIdleSeconds="0"
+                  timeToLiveSeconds="28800"
+                  diskPersistent="false"/>
+</ehcache>
