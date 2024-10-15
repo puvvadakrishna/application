@@ -23,28 +23,32 @@ import org.springframework.web.servlet.resource.HttpResource;
 import com.shopping.entity.Order;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@EmbeddedKafka(topics = {"library-events"}, partitions = 3)
-@TestPropertySource(properties = {"spring.kafka.producer.bootstrap-servers=${spring.embedded.kafka.brokers}",
-        "spring.kafka.admin.properties.bootstrap.servers=${spring.embedded.kafka.brokers}"})
+@EmbeddedKafka(
+    topics = {"library-events"},
+    partitions = 3)
+@TestPropertySource(
+    properties = {
+      "spring.kafka.producer.bootstrap-servers=${spring.embedded.kafka.brokers}",
+      "spring.kafka.admin.properties.bootstrap.servers=${spring.embedded.kafka.brokers}"
+    })
 class ProducerControllerIntegrationTest {
 
-    @Autowired
-    TestRestTemplate template;
+  @Autowired TestRestTemplate template;
 
-    private Consumer<Integer, String> consumer;
+  private Consumer<Integer, String> consumer;
 
-    @Test
-    void publish() {
+  @Test
+  void publish() {
 
-        Order order = Order.builder().name("rama").quantity(33).build();
-        HttpHeaders header = new HttpHeaders();
-        header.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<Order> entity = new HttpEntity<>(order, header);
-        ResponseEntity<String> response = template.exchange("/api/v1/kafka/publish", HttpMethod.POST, entity, String.class);
-        assertEquals(HttpStatus.CREATED, response.getStatusCode());
-    }
+    Order order = Order.builder().name("rama").quantity(33).build();
+    HttpHeaders header = new HttpHeaders();
+    header.setContentType(MediaType.APPLICATION_JSON);
+    HttpEntity<Order> entity = new HttpEntity<>(order, header);
+    ResponseEntity<String> response =
+        template.exchange("/api/v1/kafka/publish", HttpMethod.POST, entity, String.class);
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  }
 
-    @Test
-    void publishPOJO() {
-    }
+  @Test
+  void publishPOJO() {}
 }
