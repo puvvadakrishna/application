@@ -27,10 +27,16 @@ pipeline {
             echo 'Build successful'
          }
          failure{
-            echo 'Build successful'
+            echo 'Build failure'
          }
          always{
             echo 'job executed'
+         }
+         aborted{
+            echo 'Build aborted'
+         }
+         changed{
+            echo 'Build state changed, please take a look!'
          }
      }
 }
