@@ -1,0 +1,12 @@
+@Test
+void test() {
+
+    List<Integer> a = List.of();
+    List<Integer> b = List.of(1, 2, 3);
+
+
+    assertTrue(a.stream().anyMatch(b::contains));
+    assertTrue(a.stream().allMatch(b::contains));
+    assertTrue(b.stream().allMatch(a::contains));
+    assertTrue(a.stream().noneMatch(b::contains));
+}
