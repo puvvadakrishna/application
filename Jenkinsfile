@@ -1,8 +1,10 @@
 pipeline {
-    agent any
-     tools {
-         docker 'maven:3.6.3'
-     }
+      agent {
+           docker {
+               image 'maven:3.6.3'
+               args '-v /root/.m2:/root/.m2' // Optional: to cache Maven dependencies
+           }
+       }
     stages {
              stage('Initialize'){
                 steps{
