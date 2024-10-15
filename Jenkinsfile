@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn clean install -DskipTests=true'
             }
         }
         stage('Test') {
@@ -21,4 +21,16 @@ pipeline {
             }
         }
         }
+
+     post{
+         success{
+            echo 'Build successful'
+         }
+         failure{
+            echo 'Build successful'
+         }
+         always{
+            echo 'job executed'
+         }
+     }
 }
