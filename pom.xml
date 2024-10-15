@@ -17,7 +17,7 @@
     <description>app-sample-examples</description>
     <properties>
         <java.version>11</java.version>
-        <jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <jacoco.bundle.line.coverage>0</jacoco.bundle.line.coverage>
         <jacoco.bundle.instruction.coverage>0</jacoco.bundle.instruction.coverage>
         <jacoco.bundle.branch.coverage>0.0</jacoco.bundle.branch.coverage>
