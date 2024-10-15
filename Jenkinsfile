@@ -1,10 +1,10 @@
 pipeline {
      agent {
-         docker {
-             image 'maven:latest'
-             args '-v /root/.m2:/root/.m2'
-         }
-     }
+          docker {
+              image 'maven:3.9.3'
+              args '-v /root/.m2:/root/.m2' // Optional: to cache Maven dependencies
+          }
+      }
     stages {
              stage('Initialize'){
                 steps{
