@@ -1,25 +1,22 @@
 pipeline {
     agent any
-      tools {
-         maven 'maven-3.9.6' 
-     }
     stages {
-         stage('Initialize'){
-            steps{
-                echo "Step that saw"
-                sh 'mvn --version'
+             stage('Initialize'){
+                steps{
+                    echo "Step that saw"
+                    sh 'mvn --version'
+                }
             }
-        }
-        stage('Build') {
-            steps {
-                sh 'mvn clean install -DskipTests=true'
+            stage('Build') {
+                steps {
+                    sh 'mvn clean install -DskipTests=true'
+                }
             }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
+            stage('Test') {
+                steps {
+                    sh 'mvn test'
+                }
             }
-        }
         }
 
      post{
