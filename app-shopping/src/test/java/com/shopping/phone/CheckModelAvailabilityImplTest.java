@@ -15,17 +15,17 @@ import static org.junit.Assert.*;
 @ExtendWith(MockitoExtension.class)
 class CheckModelAvailabilityImplTest {
 
-    @InjectMocks
-    CheckModelAvailabilityImpl cmai;
+  @InjectMocks CheckModelAvailabilityImpl cmai;
 
-    @Test
-    void isModelAvailableTest() throws ProductNotFoundException {
-        assertEquals(new PhoneModel("ip13", "30k", "pink").toString(), cmai.isModelAvailable("ip13").get().toString());
-    }
+  @Test
+  void isModelAvailableTest() throws ProductNotFoundException {
+    assertEquals(
+        new PhoneModel("ip13", "30k", "pink").toString(),
+        cmai.isModelAvailable("ip13").get().toString());
+  }
 
-    //   @Test
-    void isModelAvailableTest_invalidtest() {
-        assertEquals(Optional.empty(), cmai.isModelAvailable("ip19"));
-    }
-
+  //   @Test
+  void isModelAvailableTest_invalidtest() {
+    assertEquals(Optional.empty(), cmai.isModelAvailable("ip19"));
+  }
 }

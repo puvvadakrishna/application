@@ -17,13 +17,12 @@ import com.shopping.kafka.producer.Producer;
 @RequestMapping("/api/bean")
 public class DynamicBeanInvockationController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Producer.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(Producer.class);
 
-    @Autowired
-    private Map<String, OrderProcesser> orderProcesserMap;
+  @Autowired private Map<String, OrderProcesser> orderProcesserMap;
 
-    @GetMapping
-    public ResponseEntity<String> publish(@RequestParam("message") String message) {
-        return ResponseEntity.status(HttpStatus.OK).body(orderProcesserMap.get(message).test());
-    }
+  @GetMapping
+  public ResponseEntity<String> publish(@RequestParam("message") String message) {
+    return ResponseEntity.status(HttpStatus.OK).body(orderProcesserMap.get(message).test());
+  }
 }

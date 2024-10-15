@@ -1,29 +1,26 @@
 package com.shopping.controller;
 
 
+import com.shopping.entity.PhoneModel;
 import com.shopping.exception.ProductNotFoundException;
 import com.shopping.phone.CheckModelAvailability;
-import com.shopping.entity.PhoneModel;
 import com.shopping.repo.PhoneModelRepository;
 import com.shopping.service.PhoneService;
+import java.util.List;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
-
 @RestController
 @RequestMapping("phone")
 public class PhoneController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PhoneController.class);
-    private CheckModelAvailability cma;
-
     private final PhoneModelRepository modelRepository;
-
     private final PhoneService phoneservice;
+    private CheckModelAvailability cma;
 
     public PhoneController(PhoneModelRepository modelRepository, PhoneService phoneservice) {
         this.modelRepository = modelRepository;

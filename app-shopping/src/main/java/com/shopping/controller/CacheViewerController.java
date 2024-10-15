@@ -15,22 +15,22 @@ import java.util.Map;
 @RequestMapping("/cache")
 public class CacheViewerController {
 
-    @Autowired private CacheManager cacheManager; // Spring CacheManager
+  @Autowired private CacheManager cacheManager; // Spring CacheManager
 
-    @GetMapping("/view")
-    public Map<Object, Object> viewCacheContents(@RequestParam String cacheName) {
-        Map<Object, Object> cacheContents = new HashMap<>();
-        Cache cache = cacheManager.getCache(cacheName);
+  @GetMapping("/view")
+  public Map<Object, Object> viewCacheContents(@RequestParam String cacheName) {
+    Map<Object, Object> cacheContents = new HashMap<>();
+    Cache cache = cacheManager.getCache(cacheName);
 
-        if (cache != null && cache.getNativeCache() instanceof net.sf.ehcache.Ehcache) {
-            net.sf.ehcache.Ehcache ehcache = (net.sf.ehcache.Ehcache) cache.getNativeCache();
-            for (Object key : ehcache.getKeys()) {
-                cacheContents.put(key, ehcache.get(key).getObjectValue());
-            }
-        } else {
-            cacheContents.put("Error", "Cache not found or unsupported cache type.");
-        }
-
-        return cacheContents;
+    if (cache != null && cache.getNativeCache() instanceof net.sf.ehcache.Ehcache) {
+      net.sf.ehcache.Ehcache ehcache = (net.sf.ehcache.Ehcache) cache.getNativeCache();
+      for (Object key : ehcache.getKeys()) {
+        cacheContents.put(key, ehcache.get(key).getObjectValue());
+      }
+    } else {
+      cacheContents.put("Error", "Cache not found or unsupported cache type.");
     }
+
+    return cacheContents;
+  }
 }

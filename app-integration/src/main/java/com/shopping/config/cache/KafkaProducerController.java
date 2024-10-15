@@ -19,35 +19,38 @@ import com.shopping.kafka.producer.wikimedia.WikimediaChangesProducer;
 @RequestMapping("/api/v1/kafka")
 public class KafkaProducerController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Producer.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(Producer.class);
 
-    private final Producer producer;
+  private final Producer producer;
 
-    private final WikimediaChangesProducer wikimediaChangesProducer;
+  private final WikimediaChangesProducer wikimediaChangesProducer;
 
-    public KafkaProducerController(Producer producer, WikimediaChangesProducer wikimediaChangesProducer) {
-        this.producer = producer;
-        this.wikimediaChangesProducer = wikimediaChangesProducer;
-    }
+  public KafkaProducerController(
+      Producer producer, WikimediaChangesProducer wikimediaChangesProducer) {
+    this.producer = producer;
+    this.wikimediaChangesProducer = wikimediaChangesProducer;
+  }
 
-    @GetMapping("/publish")
-    public ResponseEntity<Order> publish(@RequestParam("message") String message) throws ExecutionException, InterruptedException {
-        return ResponseEntity.ok(Order.builder().name("rama").id("12").build());
-    }
+  @GetMapping("/publish")
+  public ResponseEntity<Order> publish(@RequestParam("message") String message)
+      throws ExecutionException, InterruptedException {
+    return ResponseEntity.ok(Order.builder().name("rama").id("12").build());
+  }
 
-    @PostMapping("/publish")
-    public ResponseEntity<String> publishPOJO(@RequestBody Order order) throws ExecutionException, InterruptedException {
-        LOGGER.info("Before sending the message..");
-        producer.sendMessageSync(order);
-        LOGGER.info("After sending the message..");
-        return ResponseEntity.status(HttpStatus.CREATED).body("Message sent to kafka topic");
-    }
+  @PostMapping("/publish")
+  public ResponseEntity<String> publishPOJO(@RequestBody Order order)
+      throws ExecutionException, InterruptedException {
+    LOGGER.info("Before sending the message..");
+    producer.sendMessageSync(order);
+    LOGGER.info("After sending the message..");
+    return ResponseEntity.status(HttpStatus.CREATED).body("Message sent to kafka topic");
+  }
 
-    @GetMapping("/send-wikichanges")
-    public ResponseEntity<String> sendWikiChages() throws ExecutionException, InterruptedException {
-        LOGGER.info("Before sending the message..");
-        //wikimediaChangesProducer.send();
-        LOGGER.info("After sending the message..");
-        return ResponseEntity.status(HttpStatus.CREATED).body("Wiki updates sent to kafka topic");
-    }
+  @GetMapping("/send-wikichanges")
+  public ResponseEntity<String> sendWikiChages() throws ExecutionException, InterruptedException {
+    LOGGER.info("Before sending the message..");
+    // wikimediaChangesProducer.send();
+    LOGGER.info("After sending the message..");
+    return ResponseEntity.status(HttpStatus.CREATED).body("Wiki updates sent to kafka topic");
+  }
 }

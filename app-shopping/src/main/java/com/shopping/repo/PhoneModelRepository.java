@@ -8,12 +8,11 @@ import java.util.Optional;
 
 public interface PhoneModelRepository extends JpaRepository<PhoneModel, Long> {
 
-    PhoneModel findByModelNo(String modelNo);
+  PhoneModel findByModelNo(String modelNo);
 
-    List<PhoneModel> findByModelColour(String modelColour);
+  List<PhoneModel> findByModelColour(String modelColour);
 
-    List<PhoneModel> findBymodelPrice(String modelPrice);
+  List<PhoneModel> findBymodelPrice(String modelPrice);
 
-
-    void deleteBymodelPrice(String modelPrice);
+  void deleteBymodelPrice(String modelPrice);
 }

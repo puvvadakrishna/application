@@ -1,13 +1,11 @@
 package com.shopping.customer.purchase;
 
+import com.shopping.amazon.AmazonShopping;
+import com.shopping.amazon.util.InputReaderUtil;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
-import com.shopping.amazon.AmazonShopping;
-import com.shopping.amazon.util.InputReaderUtil;
-
-import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor

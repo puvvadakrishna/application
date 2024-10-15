@@ -1,10 +1,10 @@
 package com.shopping.delivery;
 
+import com.shopping.customerdetails.save.SaveCustomerData;
+import com.shopping.deliverypartner.DeliveryHub;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.shopping.customerdetails.save.SaveCustomerData;
-import com.shopping.deliverypartner.DeliveryHub;
 
 @Service
 public class GetDeliveryDetailsImpl implements GetDeliveryDetails {

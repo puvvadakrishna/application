@@ -15,25 +15,21 @@ import java.util.Optional;
 @AllArgsConstructor
 public class EmployeeController {
 
+  private final EmployeeRepository employeeRepository;
+  private final EmployeeService employeeService;
 
-    private final EmployeeRepository employeeRepository;
-    private final EmployeeService employeeService;
+  @GetMapping("/all")
+  public List<Employee> getEmployees() {
+    return employeeRepository.findAll();
+  }
 
+  @GetMapping
+  public Optional<Employee> getEmployees(@RequestParam Long id) {
+    return employeeService.findById(id);
+  }
 
-    @GetMapping("/all")
-    public List<Employee> getEmployees() {
-        return employeeRepository.findAll();
-    }
-
-
-    @GetMapping
-    public Optional<Employee> getEmployees(@RequestParam Long id) {
-        return employeeService.findById(id);
-    }
-
-
-    @PostMapping
-    public Employee save(@RequestBody Employee emp) {
-        return employeeService.save(emp);
-    }
+  @PostMapping
+  public Employee save(@RequestBody Employee emp) {
+    return employeeService.save(emp);
+  }
 }

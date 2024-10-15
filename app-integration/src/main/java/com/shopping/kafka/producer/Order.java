@@ -15,7 +15,7 @@ import lombok.ToString;
 @Getter
 public class Order {
 
-    private String id;
+  private String id;
 
-    private String name;
+  private String name;
 }

@@ -25,76 +25,99 @@ import org.springframework.util.backoff.FixedBackOff;
 
 import com.shopping.kafka.exceptions.CustomException;
 import com.shopping.kafka.producer.ProducerConfiguration;
+
 @Configuration
 public class ConsumerConfiguration {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ConsumerConfiguration.class);
-    protected final KafkaProperties properties;
-    @Autowired
-    KafkaTemplate kafkaTemplate;
+  private static final Logger LOGGER = LoggerFactory.getLogger(ConsumerConfiguration.class);
+  protected final KafkaProperties properties;
+  @Autowired KafkaTemplate kafkaTemplate;
 
-    @Value("${kafka.backoff.interval}")
-    private Long interval;
+  @Value("${kafka.backoff.interval}")
+  private Long interval;
 
-    @Value("${kafka.backoff.max_failure}")
-    private Long maxAttempts;
+  @Value("${kafka.backoff.max_failure}")
+  private Long maxAttempts;
 
-    @Value("${kafka.backoff.retry.topic}")
-    private String retryTopic;
+  @Value("${kafka.backoff.retry.topic}")
+  private String retryTopic;
 
-    @Value("${kafka.backoff.DLT}")
-    private String deadLetterTopic;
+  @Value("${kafka.backoff.DLT}")
+  private String deadLetterTopic;
 
-    public ConsumerConfiguration(KafkaProperties properties) {
-        this.properties = properties;
-    }
+  public ConsumerConfiguration(KafkaProperties properties) {
+    this.properties = properties;
+  }
 
-    @Bean
-    public DefaultErrorHandler errorHandler() {
-        BackOff fixedBackOff = new FixedBackOff(interval, maxAttempts);
-        //DefaultErrorHandler errorHandler = new DefaultErrorHandler((consumerRecord, e) -> {
-        //    LOGGER.info("Error handler block :{}", consumerRecord.value());
-        //}, fixedBackOff);
-        //errorHandler.addNotRetryableExceptions(NullPointerException.class);
+  @Bean
+  public DefaultErrorHandler errorHandler() {
+    BackOff fixedBackOff = new FixedBackOff(interval, maxAttempts);
+    // DefaultErrorHandler errorHandler = new DefaultErrorHandler((consumerRecord, e) -> {
+    //    LOGGER.info("Error handler block :{}", consumerRecord.value());
+    // }, fixedBackOff);
+    // errorHandler.addNotRetryableExceptions(NullPointerException.class);
 
-        DefaultErrorHandler defaultErrorHandler = new DefaultErrorHandler(
-                //consumerRecordRecoverer
-                publishingRecoverer(), fixedBackOff
-                //expBackOff
-        );
-        defaultErrorHandler.addRetryableExceptions(CustomException.class);
-        defaultErrorHandler.addNotRetryableExceptions(NullPointerException.class);
+    DefaultErrorHandler defaultErrorHandler =
+        new DefaultErrorHandler(
+            // consumerRecordRecoverer
+            publishingRecoverer(), fixedBackOff
+            // expBackOff
+            );
+    defaultErrorHandler.addRetryableExceptions(CustomException.class);
+    defaultErrorHandler.addNotRetryableExceptions(NullPointerException.class);
 
-        defaultErrorHandler.setRetryListeners((record, ex, deliveryAttempt) -> LOGGER.info("Error handler block deliveryAttempt:{} for message  :{}", deliveryAttempt, record.value()));
+    defaultErrorHandler.setRetryListeners(
+        (record, ex, deliveryAttempt) ->
+            LOGGER.info(
+                "Error handler block deliveryAttempt:{} for message  :{}",
+                deliveryAttempt,
+                record.value()));
 
-        return defaultErrorHandler;
-    }
+    return defaultErrorHandler;
+  }
 
-    public DeadLetterPublishingRecoverer publishingRecoverer() {
+  public DeadLetterPublishingRecoverer publishingRecoverer() {
 
-        DeadLetterPublishingRecoverer recoverer = new DeadLetterPublishingRecoverer(kafkaTemplate, (r, e) -> {
-            LOGGER.error("Exception in publishing Recoverer to topic:{} and error message {}:", retryTopic, deadLetterTopic, e);
-            if (e.getCause() instanceof InterruptedException) {
+    DeadLetterPublishingRecoverer recoverer =
+        new DeadLetterPublishingRecoverer(
+            kafkaTemplate,
+            (r, e) -> {
+              LOGGER.error(
+                  "Exception in publishing Recoverer to topic:{} and error message {}:",
+                  retryTopic,
+                  deadLetterTopic,
+                  e);
+              if (e.getCause() instanceof InterruptedException) {
                 return new TopicPartition(retryTopic, r.partition());
-            } else {
+              } else {
                 return new TopicPartition(deadLetterTopic, r.partition());
-            }
-        });
+              }
+            });
 
-        return recoverer;
-    }
+    return recoverer;
+  }
 
-    @Bean
-    ConcurrentKafkaListenerContainerFactory<?, ?> kafkaListenerContainerFactory(ConcurrentKafkaListenerContainerFactoryConfigurer configurer, ObjectProvider<ConsumerFactory<Object, Object>> kafkaConsumerFactory, ObjectProvider<ContainerCustomizer<Object, Object, ConcurrentMessageListenerContainer<Object, Object>>> kafkaContainerCustomizer) {
-        ConcurrentKafkaListenerContainerFactory<Object, Object> factory = new ConcurrentKafkaListenerContainerFactory();
-        configurer.configure(factory, kafkaConsumerFactory.getIfAvailable(() -> {
-            return new DefaultKafkaConsumerFactory(this.properties.buildConsumerProperties());
-        }));
-        Objects.requireNonNull(factory);
-        kafkaContainerCustomizer.ifAvailable(factory::setContainerCustomizer);
-        factory.setCommonErrorHandler(errorHandler());
-        factory.getContainerProperties().setAckCount(ContainerProperties.AckMode.MANUAL.ordinal());
-        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
-        factory.setConcurrency(1);
-        return factory;
-    }
+  @Bean
+  ConcurrentKafkaListenerContainerFactory<?, ?> kafkaListenerContainerFactory(
+      ConcurrentKafkaListenerContainerFactoryConfigurer configurer,
+      ObjectProvider<ConsumerFactory<Object, Object>> kafkaConsumerFactory,
+      ObjectProvider<
+              ContainerCustomizer<
+                  Object, Object, ConcurrentMessageListenerContainer<Object, Object>>>
+          kafkaContainerCustomizer) {
+    ConcurrentKafkaListenerContainerFactory<Object, Object> factory =
+        new ConcurrentKafkaListenerContainerFactory();
+    configurer.configure(
+        factory,
+        kafkaConsumerFactory.getIfAvailable(
+            () -> {
+              return new DefaultKafkaConsumerFactory(this.properties.buildConsumerProperties());
+            }));
+    Objects.requireNonNull(factory);
+    kafkaContainerCustomizer.ifAvailable(factory::setContainerCustomizer);
+    factory.setCommonErrorHandler(errorHandler());
+    factory.getContainerProperties().setAckCount(ContainerProperties.AckMode.MANUAL.ordinal());
+    factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
+    factory.setConcurrency(1);
+    return factory;
+  }
 }

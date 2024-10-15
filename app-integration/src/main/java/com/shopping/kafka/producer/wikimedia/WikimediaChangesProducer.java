@@ -16,32 +16,32 @@ import com.launchdarkly.eventsource.EventSource;
 @Service
 public class WikimediaChangesProducer {
 
-    @Autowired
-    private KafkaTemplate kafkaTemplate;
+  @Autowired private KafkaTemplate kafkaTemplate;
 
-    public void send() throws InterruptedException {
+  public void send() throws InterruptedException {
 
-        //// create Producer Properties
-        //Properties properties = new Properties();
-        //properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
-        //properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        //properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        //
-        //// create the Producer
-        //KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
+    //// create Producer Properties
+    // Properties properties = new Properties();
+    // properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+    // properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
+    // StringSerializer.class.getName());
+    // properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
+    // StringSerializer.class.getName());
+    //
+    //// create the Producer
+    // KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
-        String topic = "wikimedia.recentchange";
+    String topic = "wikimedia.recentchange";
 
+    EventHandler eventHandler = new WikimediaChangeHandler(kafkaTemplate, topic);
+    String url = "https://stream.wikimedia.org/v2/stream/recentchange";
+    EventSource.Builder builder = new EventSource.Builder(eventHandler, URI.create(url));
+    EventSource eventSource = builder.build();
 
-        EventHandler eventHandler = new WikimediaChangeHandler(kafkaTemplate, topic);
-        String url = "https://stream.wikimedia.org/v2/stream/recentchange";
-        EventSource.Builder builder = new EventSource.Builder(eventHandler, URI.create(url));
-        EventSource eventSource = builder.build();
+    // start the producer in another thread
+    eventSource.start();
 
-        // start the producer in another thread
-        eventSource.start();
-
-        // we produce for 10 minutes and block the program until then
-        TimeUnit.MINUTES.sleep(1);
-    }
+    // we produce for 10 minutes and block the program until then
+    TimeUnit.MINUTES.sleep(1);
+  }
 }

@@ -11,22 +11,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 public class SaveCustomerDataImplTest {
-    SaveCustomerDataImpl scd = new SaveCustomerDataImpl();
-    @Test
-    void getNameAndAdressTest()
-    {
-        assertEquals("coventry",scd.getNameAndAdress("somu"));
-    }
-    @Test
-    void getNameAndAdressTest_With_WrongData()
-    {
-        assertEquals("",scd.getNameAndAdress("Anj"));
-    }
+  SaveCustomerDataImpl scd = new SaveCustomerDataImpl();
 
-    @Test
-    void saveNewUserTest()
-    {
+  @Test
+  void getNameAndAdressTest() {
+    assertEquals("coventry", scd.getNameAndAdress("somu"));
+  }
 
-        assertEquals("yash",scd.saveNewUser("yash","USA"));
-    }
+  @Test
+  void getNameAndAdressTest_With_WrongData() {
+    assertEquals("", scd.getNameAndAdress("Anj"));
+  }
+
+  @Test
+  void saveNewUserTest() {
+
+    assertEquals("yash", scd.saveNewUser("yash", "USA"));
+  }
 }

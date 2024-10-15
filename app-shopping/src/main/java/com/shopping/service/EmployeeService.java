@@ -12,22 +12,21 @@ import java.util.Optional;
 @AllArgsConstructor
 public class EmployeeService {
 
-    private final EmployeeRepository employeeRepository;
+  private final EmployeeRepository employeeRepository;
 
+  public Employee save(Employee emp) {
 
-    public Employee save(Employee emp) {
+    emp.setLastname(emp.getLastname() + " funny!!");
+    return employeeRepository.save(emp);
+  }
 
-        emp.setLastname(emp.getLastname() + " funny!!");
-        return employeeRepository.save(emp);
+  public Optional<Employee> findById(Long id) {
+
+    Optional<Employee> emp = employeeRepository.findById(id);
+    if (emp.isPresent()) {
+      return emp;
+    } else {
+      throw new RecordNotFoundException("id:" + id);
     }
-
-    public Optional<Employee> findById(Long id) {
-
-        Optional<Employee> emp = employeeRepository.findById(id);
-        if (emp.isPresent()) {
-            return emp;
-        } else {
-            throw new RecordNotFoundException("id:"+id);
-        }
-    }
+  }
 }

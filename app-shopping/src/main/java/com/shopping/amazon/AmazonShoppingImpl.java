@@ -18,31 +18,29 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AmazonShoppingImpl implements AmazonShopping {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AmazonShoppingImpl.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(AmazonShoppingImpl.class);
 
-    private final GetDeliveryDetails gd;
+  private final GetDeliveryDetails gd;
 
-    private final CheckModelAvailability sid;
+  private final CheckModelAvailability sid;
 
+  public boolean orderPhone(String phoneModel, String details) {
+    try {
 
-    public boolean orderPhone(String phoneModel, String details) {
-        try {
-
-            Optional<PhoneModel> phone = sid.isModelAvailable(phoneModel);
-            if (phone.isPresent()) {
-                LOGGER.info("selected product details are {}", phone);
-                LOGGER.info("Do you want to purchase Y/N");
-                String input = InputReaderUtil.readConfirmation();
-                if (input.equalsIgnoreCase("y")) {
-                    return gd.deliverOrder(details);
-                } else {
-                    LOGGER.info("Do you want to look another phone?Y/N : ");
-                }
-            }
-        } catch (ProductNotFoundException e) {
-            LOGGER.error(e.getMessage());
+      Optional<PhoneModel> phone = sid.isModelAvailable(phoneModel);
+      if (phone.isPresent()) {
+        LOGGER.info("selected product details are {}", phone);
+        LOGGER.info("Do you want to purchase Y/N");
+        String input = InputReaderUtil.readConfirmation();
+        if (input.equalsIgnoreCase("y")) {
+          return gd.deliverOrder(details);
+        } else {
+          LOGGER.info("Do you want to look another phone?Y/N : ");
         }
-        return false;
+      }
+    } catch (ProductNotFoundException e) {
+      LOGGER.error(e.getMessage());
     }
-
+    return false;
+  }
 }

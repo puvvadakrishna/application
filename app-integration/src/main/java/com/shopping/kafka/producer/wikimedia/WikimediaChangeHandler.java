@@ -10,39 +10,39 @@ import com.launchdarkly.eventsource.MessageEvent;
 
 public class WikimediaChangeHandler implements EventHandler {
 
-    private KafkaTemplate kafkaTemplate;
-    String topic;
-    private final Logger log = LoggerFactory.getLogger(WikimediaChangeHandler.class.getSimpleName());
+  private final Logger log = LoggerFactory.getLogger(WikimediaChangeHandler.class.getSimpleName());
+  String topic;
+  private KafkaTemplate kafkaTemplate;
 
-    public WikimediaChangeHandler(KafkaTemplate<String, String> kafkaTemplate, String topic) {
-        this.kafkaTemplate = kafkaTemplate;
-        this.topic = topic;
-    }
+  public WikimediaChangeHandler(KafkaTemplate<String, String> kafkaTemplate, String topic) {
+    this.kafkaTemplate = kafkaTemplate;
+    this.topic = topic;
+  }
 
-    @Override
-    public void onOpen() {
-        // nothing here
-    }
+  @Override
+  public void onOpen() {
+    // nothing here
+  }
 
-    @Override
-    public void onClosed() {
-        kafkaTemplate.destroy();
-    }
+  @Override
+  public void onClosed() {
+    kafkaTemplate.destroy();
+  }
 
-    @Override
-    public void onMessage(String event, MessageEvent messageEvent) {
-        log.info(messageEvent.getData());
-        // asynchronous
-        kafkaTemplate.send(new ProducerRecord<>(topic, messageEvent.getData()));
-    }
+  @Override
+  public void onMessage(String event, MessageEvent messageEvent) {
+    log.info(messageEvent.getData());
+    // asynchronous
+    kafkaTemplate.send(new ProducerRecord<>(topic, messageEvent.getData()));
+  }
 
-    @Override
-    public void onComment(String comment) {
-        // nothing here
-    }
+  @Override
+  public void onComment(String comment) {
+    // nothing here
+  }
 
-    @Override
-    public void onError(Throwable t) {
-        log.error("Error in Stream Reading", t);
-    }
+  @Override
+  public void onError(Throwable t) {
+    log.error("Error in Stream Reading", t);
+  }
 }

@@ -19,24 +19,22 @@ import com.shopping.phone.CheckModelAvailability;
 @ExtendWith(MockitoExtension.class)
 class AmazonShoppingImplTest {
 
-    @InjectMocks
-    AmazonShoppingImpl as;
+  @InjectMocks AmazonShoppingImpl as;
 
-    @Mock
-    private GetDeliveryDetails getDeliveryDetails;
-    @Mock
-    private CheckModelAvailability checkModelAvailability;
+  @Mock private GetDeliveryDetails getDeliveryDetails;
+  @Mock private CheckModelAvailability checkModelAvailability;
 
-    //@Test
-    //void orderPhone_with_confirmation_yes() throws ProductNotFoundException {
-    //    when(getDeliveryDetails.deliverOrder(anyString())).thenReturn(true);
-    //    when(checkModelAvailability.isModelAvailable(anyString())).thenReturn(new IphoneData("ip13", "2000", "white"));
-    //    try (MockedStatic<InputReaderUtil> utilities = Mockito.mockStatic(InputReaderUtil.class)) {
-    //        utilities.when(InputReaderUtil::readInput).thenReturn("Y");
-    //        boolean result = as.orderPhone("ip13", "somu");
-    //
-    //        assertEquals(true, result);
-    //    }
-    //}
+  // @Test
+  // void orderPhone_with_confirmation_yes() throws ProductNotFoundException {
+  //    when(getDeliveryDetails.deliverOrder(anyString())).thenReturn(true);
+  //    when(checkModelAvailability.isModelAvailable(anyString())).thenReturn(new IphoneData("ip13",
+  // "2000", "white"));
+  //    try (MockedStatic<InputReaderUtil> utilities = Mockito.mockStatic(InputReaderUtil.class)) {
+  //        utilities.when(InputReaderUtil::readInput).thenReturn("Y");
+  //        boolean result = as.orderPhone("ip13", "somu");
+  //
+  //        assertEquals(true, result);
+  //    }
+  // }
 
 }

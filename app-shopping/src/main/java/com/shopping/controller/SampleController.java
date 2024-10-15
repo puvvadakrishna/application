@@ -1,4 +1,5 @@
 package com.shopping.controller;
+
 import static com.shopping.config.cache.CacheConstants.DEFAULT_CACHE_NAME;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/getname")
 public class SampleController {
 
-    @Autowired private DataService dataService;
+  @Autowired private DataService dataService;
 
-    @GetMapping
-    @Cacheable(value = DEFAULT_CACHE_NAME, key = "#id")
-    public String getData(@RequestParam String id) {
-        return dataService.getDataById(id);
-    }
+  @GetMapping
+  @Cacheable(value = DEFAULT_CACHE_NAME, key = "#id")
+  public String getData(@RequestParam String id) {
+    return dataService.getDataById(id);
+  }
 }
