@@ -8,28 +8,27 @@ import com.shopping.deliverypartner.DeliveryHub;
 
 @Service
 public class GetDeliveryDetailsImpl implements GetDeliveryDetails {
-    private static final Logger LOGGER = LoggerFactory.getLogger(GetDeliveryDetailsImpl.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(GetDeliveryDetailsImpl.class);
 
-    private final SaveCustomerData scd;
+  private final SaveCustomerData scd;
 
-    private final DeliveryHub dh;
+  private final DeliveryHub dh;
 
-    public GetDeliveryDetailsImpl(SaveCustomerData scd, DeliveryHub dh) {
-        this.scd = scd;
-        this.dh = dh;
+  public GetDeliveryDetailsImpl(SaveCustomerData scd, DeliveryHub dh) {
+    this.scd = scd;
+    this.dh = dh;
+  }
+
+  public boolean deliverOrder(String customerName) {
+
+    String customerAdress = scd.getNameAndAdress(customerName);
+    if (customerAdress.isEmpty()) {
+      LOGGER.info("Pls enter correct details");
+      return false;
+
+    } else {
+      dh.deliver(customerName, customerAdress);
+      return true;
     }
-
-    public boolean deliverOrder(String customerName) {
-
-        String customerAdress = scd.getNameAndAdress(customerName);
-        if (customerAdress.isEmpty()) {
-            LOGGER.info("Pls enter correct details");
-            return false;
-
-        } else {
-            dh.deliver(customerName, customerAdress);
-            return true;
-        }
-    }
-
+  }
 }
