@@ -1,27 +1,25 @@
 pipeline {
-      agent {
-           docker {
-               image 'maven:3.6.3'
-               args '-v /root/.m2:/root/.m2' // Optional: to cache Maven dependencies
-           }
-       }
+    agent any
+      tools {
+         maven 'maven-3.9.6'
+     }
     stages {
-             stage('Initialize'){
-                steps{
-                    echo "Step that saw"
-                    sh 'mvn --version'
-                }
+         stage('Initialize'){
+            steps{
+                echo "Step that saw"
+                sh 'mvn --version'
             }
-            stage('Build') {
-                steps {
-                    sh 'mvn clean install -X'
-                }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean install -DskipTests=true'
             }
-            stage('Test') {
-                steps {
-                    sh 'mvn test'
-                }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
             }
+        }
         }
 
      post{
@@ -36,9 +34,6 @@ pipeline {
          }
          aborted{
             echo 'Build aborted'
-         }
-         changed{
-            echo 'Build state changed, please take a look!'
          }
      }
 }
