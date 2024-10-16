@@ -1,6 +1,7 @@
 pipeline {
     agent any
-    stages
+
+    stages {
          stage('Initialize'){
             steps{
                 echo "Step that saw"
