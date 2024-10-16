@@ -52,7 +52,7 @@ pipeline {
             }
             stage('Build Docker image') {
                  steps {
-
+                        echo "TO-DO docker images steps"
                    }
             }
     }
