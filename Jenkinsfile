@@ -31,12 +31,18 @@ pipeline {
         }
 
      post{
-         success{
-            echo 'Build successful'
-         }
-         failure{
-            echo 'Build failure'
-         }
+          success {
+                mail to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
+                     subject: "Build successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                     body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} has failed.
+                              Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
+                  }
+          failure {
+               mail to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
+                    subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                    body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} has failed.
+                             Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
+          }
          always{
             echo 'job executed'
          }
