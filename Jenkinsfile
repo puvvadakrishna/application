@@ -49,9 +49,10 @@ pipeline {
             }
             stage('Build Docker image') {
                  steps {
-                       script {
-                                docker.build("puvvadakrishna/hello:${env.BUILD_TAG}")
-                              }
+                       sh "docker build -t puvvadakrishna/hello:${env.BUILD_TAG}"
+//                        script {
+//                                 docker.build("puvvadakrishna/hello:${env.BUILD_TAG}")
+//                               }
                        }
             }
         }
