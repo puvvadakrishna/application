@@ -9,7 +9,7 @@ pipeline {
              stage('Initialize'){
                 steps{
                     echo "Step that saw"
-                    sh 'mvn --verssssion'
+                    sh 'mvn --version'
                 }
             }
             stage('Build') {
@@ -26,18 +26,25 @@ pipeline {
 
      post{
          success{
-            echo 'Build successful'
+                emailext(
+                                     subject: "Build success: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                                     body: """
+                                         <p>Build <b>${env.BUILD_NUMBER}</b> of job '${env.JOB_NAME}' failed.</p>
+                                         <p>See the details at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                                     """,
+                                     to: 'puvvada.krishna@gmail.com'
+                        )
          }
-            failure {
-                     emailext(
-                         subject: "Build Failure: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                         body: """
-                             <p>Build <b>${env.BUILD_NUMBER}</b> of job '${env.JOB_NAME}' failed.</p>
-                             <p>See the details at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
-                         """,
-                         to: 'puvvada.krishna@gmail.com'
-                     )
-                 }
+        failure {
+                 emailext(
+                     subject: "Build Failure: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                     body: """
+                         <p>Build <b>${env.BUILD_NUMBER}</b> of job '${env.JOB_NAME}' failed.</p>
+                         <p>See the details at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                     """,
+                     to: 'puvvada.krishna@gmail.com'
+                 )
+             }
          always{
             echo 'job executed'
          }
