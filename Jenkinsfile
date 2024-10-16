@@ -30,28 +30,26 @@ pipeline {
                                             sh 'mvn clean'
                                         }
                                     }
-             stages {
-                    stage('Parallel Stages') {
-                            parallel {
-                                     stage('Compile') {
-                                                     steps {
-                                                           script {
-                                                                        docker.withServer('unix:///var/run/docker.sock') {
-                                                                            sh 'docker --version'
-                                                                            sh 'mvn compile'
-                                                                        }
-                                                                     }
-                                                            }
-                                                }
-                                    stage('Test') {
-                                        steps {
-                                            sh 'mvn test'
+
+            stage('Parallel Stages') {
+                    parallel {
+                             stage('Compile') {
+                                             steps {
+                                                   script {
+                                                                docker.withServer('unix:///var/run/docker.sock') {
+                                                                    sh 'docker --version'
+                                                                    sh 'mvn compile'
+                                                                }
+                                                             }
+                                                    }
                                         }
-                                    }
+                            stage('Test') {
+                                steps {
+                                    sh 'mvn test'
+                                }
                             }
                     }
-                }
-
+            }
             stage('Package') {
                              steps {
                                    script {
