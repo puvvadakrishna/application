@@ -6,6 +6,9 @@ pipeline {
 //               args '-v /root/.m2:/root/.m2' // Optional: to cache Maven dependencies
 //           }
 //       }
+    tools {
+         maven 'maven-3.9.9'
+     }
     stages {
              stage('Initialize'){
                 steps{
