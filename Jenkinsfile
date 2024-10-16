@@ -27,7 +27,7 @@ pipeline {
                    script {
                                 docker.withServer('unix:///var/run/docker.sock') {
                                     sh 'docker --version'
-                                    sh 'mvn clean install -U -DskipTests=true'
+//                                     sh 'mvn clean install -U -DskipTests=true'
                                 }
                              }
                     }
