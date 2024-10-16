@@ -50,7 +50,7 @@ pipeline {
             stage('Build Docker image') {
                  steps {
                        script {
-                                docker.build("puvvadakrishna/hello:12")
+                                docker.build("puvvadakrishna/hello:${env.BUILD_TAG}")
                               }
                        }
             }
