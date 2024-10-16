@@ -35,25 +35,27 @@ pipeline {
 
      post{
           success {
-                mail to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
+                mail from: 'puvvada.krishna@gmail.com',
+                     to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
                      subject: "Build successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                      body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} is good.
                               Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
                   }
           failure {
-               mail to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
+               mail from: 'puvvada.krishna@gmail.com',
+                    to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
                     subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} has failed.
                              Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
           }
-         always{
+          always{
             echo 'job executed'
-         }
-         aborted{
+          }
+          aborted{
             echo 'Build aborted'
-         }
-         changed{
-            echo 'Build state changed, please take a look!'
-         }
-     }
+          }
+          changed{
+             echo 'Build state changed, please take a look!'
+          }
+      }
 }
