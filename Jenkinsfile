@@ -28,14 +28,16 @@ pipeline {
          success{
             echo 'Build successful'
          }
-         failure {
-             echo 'Build failure'
-             emailext(
-                 subject: "BUILD FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                 body: """<p>Build <b>${env.BUILD_NUMBER}</b> failed. Check the Jenkins console output <a href="${env.BUILD_URL}console">${env.BUILD_URL}console</a>.</p>""",
-                 to: 'puvvada.krishna@gmail.com'
-             )
-         }
+            failure {
+                     emailext(
+                         subject: "Build Failure: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                         body: """
+                             <p>Build <b>${env.BUILD_NUMBER}</b> of job '${env.JOB_NAME}' failed.</p>
+                             <p>See the details at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                         """,
+                         to: 'puvvada.krishna@gmail.com'
+                     )
+                 }
          always{
             echo 'job executed'
          }
