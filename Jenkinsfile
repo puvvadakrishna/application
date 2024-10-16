@@ -27,7 +27,7 @@ pipeline {
                    script {
                                 docker.withServer('unix:///var/run/docker.sock') {
                                     sh 'docker --version'
-                                    sh 'mvn clean install -U -DskipTests=true'
+                                    sh 'mvn clean compile'
                                 }
                              }
                     }
@@ -51,14 +51,14 @@ pipeline {
 
      post{
           success {
-                mail from: 'puvvada.krishna@gmail.com',
+                mail from: 'jenkins-notifications',
                      to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
                      subject: "Build successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                      body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} is good.
                               Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
                   }
           failure {
-               mail from: 'puvvada.krishna@gmail.com',
+               mail from: 'jenkins-notifications',
                     to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
                     subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} has failed.
