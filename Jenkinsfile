@@ -15,19 +15,19 @@ pipeline {
         PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
     }
     stages {
-             stage('Initialize'){
+             stage('Echo to see information about builds'){
                 steps{
                     echo "Step that saw"
                     sh 'mvn --version'
                     sh 'docker --version'
                 }
             }
-            stage('Build') {
+            stage('Compile') {
              steps {
                    script {
                                 docker.withServer('unix:///var/run/docker.sock') {
                                     sh 'docker --version'
-//                                     sh 'mvn clean install -U -DskipTests=true'
+                                    sh 'mvn clean install -U -DskipTests=true'
                                 }
                              }
                     }
@@ -36,6 +36,16 @@ pipeline {
                 steps {
                     sh 'mvn test'
                 }
+            }
+            stage('Install') {
+             steps {
+                   script {
+                                docker.withServer('unix:///var/run/docker.sock') {
+                                    sh 'docker --version'
+                                    sh 'mvn clean install -U -DskipTests=true'
+                                }
+                             }
+                    }
             }
         }
 

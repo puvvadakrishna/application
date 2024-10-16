@@ -27,7 +27,7 @@
     </properties>
     <modules>
         <module>app-shopping</module>
-        <module>app-integration</module>
+<!--        <module>app-integration</module>-->
     </modules>
 
     <dependencies>
