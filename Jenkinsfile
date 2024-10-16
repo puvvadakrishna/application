@@ -35,16 +35,12 @@ pipeline {
                                      to: 'puvvada.krishna@gmail.com'
                         )
          }
-        failure {
-                 emailext(
-                     subject: "Build Failure: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                     body: """
-                         <p>Build <b>${env.BUILD_NUMBER}</b> of job '${env.JOB_NAME}' failed.</p>
-                         <p>See the details at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
-                     """,
-                     to: 'puvvada.krishna@gmail.com'
-                 )
-             }
+         failure {
+                             mail to: 'puvvada.krishna@gmail.com',
+                                  subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                                  body: """<p>Build <b>${env.JOB_NAME}</b> - <b>#${env.BUILD_NUMBER}</b> has failed.</p>
+                                           <p>Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>"""
+         }
          always{
             echo 'job executed'
          }
