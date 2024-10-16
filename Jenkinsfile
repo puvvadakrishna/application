@@ -13,11 +13,13 @@ pipeline {
                 }
             }
             stage('Build') {
-                steps {
-                    sh 'mvn clean install -U -DskipTests=true'
-                }
-            }
-            stage('Test') {
+             script {
+                        docker.withServer('unix:///var/run/docker.sock') {
+                            sh 'docker --version'
+                            sh 'mvn clean install -U -DskipTests=true'
+                        }
+                 }
+             stage('Test') {
                 steps {
                     sh 'mvn test'
                 }
