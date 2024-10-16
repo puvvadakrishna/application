@@ -17,9 +17,12 @@ pipeline {
     stages {
              stage('Echo to see information about builds'){
                 steps{
+                    echo "Docker host -  $env.DOCKER_HOST"
+                    echo "BUILD_TAG -  $env.BUILD_TAG"
                     echo "Step that saw"
                     sh 'mvn --version'
                     sh 'docker --version'
+
                 }
             }
             stage('Compile') {
