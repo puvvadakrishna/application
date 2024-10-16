@@ -9,7 +9,7 @@ pipeline {
              stage('Initialize'){
                 steps{
                     echo "Step that saw"
-                    sh 'mvn --version'
+                    sh 'mvn --verssssion'
                 }
             }
             stage('Build') {
@@ -28,8 +28,13 @@ pipeline {
          success{
             echo 'Build successful'
          }
-         failure{
-            echo 'Build failure'
+         failure {
+             echo 'Build failure'
+             emailext(
+                 subject: "BUILD FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                 body: """<p>Build <b>${env.BUILD_NUMBER}</b> failed. Check the Jenkins console output <a href="${env.BUILD_URL}console">${env.BUILD_URL}console</a>.</p>""",
+                 to: 'puvvada.krishna@gmail.com'
+             )
          }
          always{
             echo 'job executed'
