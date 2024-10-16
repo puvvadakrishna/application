@@ -9,11 +9,17 @@ pipeline {
     tools {
          maven 'maven'
      }
+    environment {
+        dockerHome = tool 'myDocker'
+        mavenHome = tool 'maven'
+        PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+    }
     stages {
              stage('Initialize'){
                 steps{
                     echo "Step that saw"
                     sh 'mvn --version'
+                    sh 'docker --version'
                 }
             }
             stage('Build') {
