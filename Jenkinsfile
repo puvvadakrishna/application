@@ -38,14 +38,21 @@ pipeline {
                 }
             }
             stage('Install') {
-             steps {
-                   script {
-                                docker.withServer('unix:///var/run/docker.sock') {
-                                    sh 'docker --version'
-                                    sh 'mvn clean install -U -DskipTests=true'
-                                }
-                             }
-                    }
+                 steps {
+                       script {
+                                    docker.withServer('unix:///var/run/docker.sock') {
+                                        sh 'docker --version'
+                                        sh 'mvn clean install -U -DskipTests=true'
+                                    }
+                               }
+                       }
+            }
+            stage('Build Docker image') {
+                 steps {
+                       script {
+                                docker.build("puvvadakrishna/hello:12")
+                              }
+                       }
             }
         }
 
