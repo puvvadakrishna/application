@@ -26,25 +26,32 @@ pipeline {
                 }
             }
              stage('Clean') {
-                            steps {
-                                sh 'mvn clean'
-                            }
-                        }
-            stage('Compile') {
-                 steps {
-                       script {
-                                    docker.withServer('unix:///var/run/docker.sock') {
-                                        sh 'docker --version'
-                                        sh 'mvn compile'
+                                        steps {
+                                            sh 'mvn clean'
+                                        }
                                     }
-                                 }
-                        }
-            }
-            stage('Test') {
-                steps {
-                    sh 'mvn test'
+             stages {
+                    stage('Parallel Stages') {
+                            parallel {
+                                     stage('Compile') {
+                                                     steps {
+                                                           script {
+                                                                        docker.withServer('unix:///var/run/docker.sock') {
+                                                                            sh 'docker --version'
+                                                                            sh 'mvn compile'
+                                                                        }
+                                                                     }
+                                                            }
+                                                }
+                                    stage('Test') {
+                                        steps {
+                                            sh 'mvn test'
+                                        }
+                                    }
+                            }
+                    }
                 }
-            }
+
             stage('Package') {
                              steps {
                                    script {
