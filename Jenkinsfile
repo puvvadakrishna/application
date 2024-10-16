@@ -25,31 +25,46 @@ pipeline {
 
                 }
             }
+             stage('Clean') {
+                            steps {
+                                sh 'mvn clean'
+                            }
+                        }
             stage('Compile') {
-             steps {
-                   script {
-                                docker.withServer('unix:///var/run/docker.sock') {
-                                    sh 'docker --version'
-                                    sh 'mvn clean compile'
-                                }
-                             }
-                    }
+                 steps {
+                       script {
+                                    docker.withServer('unix:///var/run/docker.sock') {
+                                        sh 'docker --version'
+                                        sh 'mvn compile'
+                                    }
+                                 }
+                        }
             }
             stage('Test') {
                 steps {
                     sh 'mvn test'
                 }
             }
+            stage('Package') {
+                             steps {
+                                   script {
+                                                docker.withServer('unix:///var/run/docker.sock') {
+                                                    sh 'docker --version'
+                                                    sh 'mvn package -U -DskipTests=true'
+                                                }
+                                           }
+                                   }
+                        }
             stage('Install') {
-                 steps {
-                       script {
-                                    docker.withServer('unix:///var/run/docker.sock') {
-                                        sh 'docker --version'
-                                        sh 'mvn clean install -U -DskipTests=true'
-                                    }
-                               }
-                       }
-            }
+                             steps {
+                                   script {
+                                                docker.withServer('unix:///var/run/docker.sock') {
+                                                    sh 'docker --version'
+                                                    sh 'mvn clean install -U -DskipTests=true'
+                                                }
+                                           }
+                                   }
+                        }
             stage('Build Docker image') {
                  steps {
                         echo "TO-DO docker images steps"
@@ -60,20 +75,25 @@ pipeline {
      post{
           success {
                 mail from: 'jenkins-notifications',
-                     to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
+                     to: 'sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
                      subject: "Build successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                      body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} is good.
                               Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
                   }
           failure {
                mail from: 'jenkins-notifications',
-                    to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
+                    to: 'sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
                     subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} has failed.
                              Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
           }
           always{
             echo 'job executed'
+             mail from: 'jenkins-notifications',
+                                to: 'sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
+                                subject: "Build Triggered: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                                body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} has failed.
+                                         Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
           }
           aborted{
             echo 'Build aborted'
