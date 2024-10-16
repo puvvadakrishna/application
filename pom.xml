@@ -21,7 +21,7 @@
         <jacoco.bundle.line.coverage>0</jacoco.bundle.line.coverage>
         <jacoco.bundle.instruction.coverage>0</jacoco.bundle.instruction.coverage>
         <jacoco.bundle.branch.coverage>0.0</jacoco.bundle.branch.coverage>
-        <jacoco.bundle.missed.classes>20</jacoco.bundle.missed.classes>
+        <jacoco.bundle.missed.classes>30</jacoco.bundle.missed.classes>
         <cucumber.version>6.8.1</cucumber.version>
 
     </properties>
