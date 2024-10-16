@@ -25,14 +25,17 @@ pipeline {
         }
 
      post{
-         success{
-                   echo 'Build aborted'
-        }
+         success {
+                               mail to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
+                                    subject: "Build successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                                    body: """<p>Build <b>${env.JOB_NAME}</b> - <b>#${env.BUILD_NUMBER}</b> has failed.</p>
+                                             <p>Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>"""
+         }
          failure {
-                     mail to: 'puvvada.krishna@gmail.com',
-                          subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                          body: """<p>Build <b>${env.JOB_NAME}</b> - <b>#${env.BUILD_NUMBER}</b> has failed.</p>
-                                   <p>Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>"""
+              mail to: 'Sowmyasreekollipara@gmail.com , puvvada.krishna@gmail.com',
+                   subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                   body: """<p>Build <b>${env.JOB_NAME}</b> - <b>#${env.BUILD_NUMBER}</b> has failed.</p>
+                            <p>Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>"""
          }
          always{
             echo 'job executed'
