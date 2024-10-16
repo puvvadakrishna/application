@@ -1,12 +1,11 @@
 pipeline {
-//      agent any
-     agent
-     {
-          docker {
-              image 'maven:3.9.3'
-              args '-v /root/.m2:/root/.m2' // Optional: to cache Maven dependencies
-          }
-      }
+     agent any
+//      {
+//           docker {
+//               image 'maven:3.9.3'
+//               args '-v /root/.m2:/root/.m2' // Optional: to cache Maven dependencies
+//           }
+//       }
     tools {
          maven 'maven'
      }
