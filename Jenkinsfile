@@ -5,7 +5,7 @@ pipeline {
              steps {
                 echo "Build"
                 echo "JOB_URL - $env.JOB_URL"
-                mail to: 'puvvada.krishna@gmail.com',
+                mail to: 'puvvada.krishna@gmail.com'
                    // subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
                    // body: "Please go to ${env.JOB_URL} and verify the build"
              }
