@@ -3,6 +3,6 @@ node {
            echo “Build”
          }
         Stage(‘test’) {
-            Echo “”Test”
+            Echo ”Test”
       }
 }
