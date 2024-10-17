@@ -5,6 +5,7 @@ pipeline {
              steps {
                 echo "Build"
                 echo "JOB_URL - $env.JOB_URL"
+                echo "JOB_NAME - $env.JOB_NAME"
                 echo "BUILD_NUMBER - $env.BUILD_NUMBER"
                 echo "BUILD_ID - $env.BUILD_ID"
                 echo "BUILD_URL - $env.BUILD_URL"
