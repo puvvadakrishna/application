@@ -4,10 +4,10 @@ pipeline {
            stage('Build') {
              steps {
                 echo "Build"
-                echo "JOB_URL - $env.http://localhost:8080/me/my-views/view/all/job/jenkins-devops-microservice%20pipeline"
+                echo "JOB_URL - $env.JOB_URL"
                 mail to: 'puvvada.krishna@gmail.com',
-                    subject: "Job '${app/jenkins-poc}' (${38}) is waiting for input",
-                    body: "Please go to ${http://localhost:8080/me/my-views/view/all/job/jenkins-devops-microservice%20pipeline} and verify the build"
+                    subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
+                    body: "Please go to ${env.JOB_URL} and verify the build"
              }
            }
             stage('Test') {
