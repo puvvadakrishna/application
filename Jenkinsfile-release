@@ -22,7 +22,6 @@ pipeline {
                     echo "Step that saw"
                     sh 'mvn --version'
                     sh 'docker --version'
-
                 }
             }
              stage('Clean') {
@@ -30,48 +29,18 @@ pipeline {
                         sh 'mvn clean'
                     }
              }
-            stage('Parallel Stages') {
-                    parallel {
-                         stage('Compile') {
-                                 steps {
-                                       script {
-                                                docker.withServer('unix:///var/run/docker.sock') {
-                                                    sh 'docker --version'
-                                                    sh 'mvn compile'
-                                                }
-                                       }
-                                 }
-                         }
-                        stage('Test') {
-                            steps {
-                                sh 'mvn test'
-                            }
-                        }
-                    }
-            }
-            stage('Package') {
+             stage('Release Preparations') {
                              steps {
                                    script {
                                                 docker.withServer('unix:///var/run/docker.sock') {
-                                                    sh 'docker --version'
-                                                    sh 'mvn package -U -DskipTests=true'
+                                                    sh 'mvn release:prepare -Dresume=false'
                                                 }
                                            }
                                    }
-                        }
-            stage('Install') {
-                             steps {
-                                   script {
-                                                docker.withServer('unix:///var/run/docker.sock') {
-                                                    sh 'docker --version'
-                                                    sh 'mvn clean install -U -DskipTests=true'
-                                                }
-                                           }
-                                   }
-                        }
-            stage('Build Docker image') {
+               }
+            stage('Doing Actual release') {
                  steps {
-                        echo "TO-DO docker images steps"
+                        echo "oing Actual release........"
                    }
             }
     }
