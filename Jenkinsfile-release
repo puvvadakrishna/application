@@ -33,7 +33,7 @@ pipeline {
                              steps {
                                    script {
                                                 docker.withServer('unix:///var/run/docker.sock') {
-                                                    sh 'mvn release:prepare -Dresume=false -X'
+                                                    sh 'mvn release:prepare -DautoVersionSubmodules -Dresume=false -X'
                                                 }
                                            }
                                    }
