@@ -17,11 +17,6 @@ pipeline {
     stages {
              stage('Echo to see information about builds'){
                 steps{
-                    sshagent (credentials: ['puvvadakrishna']) {
-                                    // Perform Git commands
-                                    sh 'git clone git@github.com:https://github.com/puvvadakrishna/app.git'
-                                    sh 'git push origin main'
-                    }
                     sh 'ssh-keyscan -H github.com >> ~/.ssh/known_hosts'
                     sh 'git config user.email "puvvada.krishna@gmail.com"'
                     sh 'git config user.name "puvvadakrishna"'
