@@ -21,11 +21,7 @@ pipeline {
                     sh 'git config user.email "puvvada.krishna@gmail.com"'
                     sh 'git config user.name "puvvadakrishna"'
                     checkout scm
-                    echo "Docker host -  $env.DOCKER_HOST"
-                    echo "BUILD_TAG -  $env.BUILD_TAG"
-                    echo "Step that saw"
-                    sh 'mvn --version'
-                    sh 'docker --version'
+                    checkout([$class: 'GitSCM', branches: [[name: '*/develop']], userRemoteConfigs: [[url: 'https://github.com/puvvadakrishna/app']]])
                 }
             }
              stage('Clean') {
