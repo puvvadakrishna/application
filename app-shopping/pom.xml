@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.shopping</groupId>
         <artifactId>app</artifactId>
-        <version>0.0.6-SNAPSHOT</version>
+        <version>0.0.6</version>
     </parent>
     <artifactId>app-shopping</artifactId>
     <name>app-shopping</name>
