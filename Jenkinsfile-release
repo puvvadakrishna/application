@@ -21,7 +21,7 @@ pipeline {
                     sh 'git config user.email "puvvada.krishna@gmail.com"'
                     sh 'git config user.name "puvvadakrishna"'
                     checkout scm
-                    checkout([$class: 'GitSCM', branches: [[name: '*/develop']], userRemoteConfigs: [[url: 'https://github.com/puvvadakrishna/app']]])
+                    sh 'git checkout develop'
                 }
             }
              stage('Clean') {
