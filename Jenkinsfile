@@ -11,7 +11,7 @@ pipeline {
            stage('Build') {
              steps {
                 sh 'mvn --version'
-//                 sh 'docker version'
+                sh 'docker --version'
                 echo "Build"
                 echo "JOB_URL - $env.JOB_URL"
                 echo "JOB_NAME - $env.JOB_NAME"
