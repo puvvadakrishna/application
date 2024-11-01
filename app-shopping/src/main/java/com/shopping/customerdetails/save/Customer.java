@@ -1,7 +1,6 @@
 package com.shopping.customerdetails.save;
 
 import java.io.Serializable;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

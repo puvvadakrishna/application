@@ -1,10 +1,9 @@
 package com.shopping.phone;
 
+import com.shopping.entity.PhoneModel;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
-
-import com.shopping.entity.PhoneModel;
 import org.springframework.stereotype.Component;
 
 @Component

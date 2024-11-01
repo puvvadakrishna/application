@@ -3,12 +3,11 @@ package com.shopping.controller;
 import com.shopping.entity.Employee;
 import com.shopping.repo.EmployeeRepository;
 import com.shopping.service.EmployeeService;
+import java.util.List;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/employee", produces = MediaType.APPLICATION_JSON_VALUE)

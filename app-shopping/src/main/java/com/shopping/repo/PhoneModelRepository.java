@@ -1,10 +1,8 @@
 package com.shopping.repo;
 
 import com.shopping.entity.PhoneModel;
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.List;
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PhoneModelRepository extends JpaRepository<PhoneModel, Long> {
 

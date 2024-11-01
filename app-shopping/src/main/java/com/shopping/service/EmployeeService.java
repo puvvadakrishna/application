@@ -3,10 +3,9 @@ package com.shopping.service;
 import com.shopping.entity.Employee;
 import com.shopping.exception.RecordNotFoundException;
 import com.shopping.repo.EmployeeRepository;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

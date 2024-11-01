@@ -1,10 +1,9 @@
 package com.shopping.entity;
 
-import lombok.*;
-
 import java.io.Serializable;
-import javax.persistence.Entity;
 import javax.persistence.*;
+import javax.persistence.Entity;
+import lombok.*;
 
 @Entity
 @Table(name = "phoneModel")

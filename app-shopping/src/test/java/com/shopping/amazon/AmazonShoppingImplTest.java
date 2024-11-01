@@ -1,20 +1,12 @@
 package com.shopping.amazon;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
 
-import org.junit.jupiter.api.Test;
+import com.shopping.delivery.GetDeliveryDetails;
+import com.shopping.phone.CheckModelAvailability;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockedStatic;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import com.shopping.amazon.util.InputReaderUtil;
-import com.shopping.delivery.GetDeliveryDetails;
-import com.shopping.exception.ProductNotFoundException;
-import com.shopping.phone.CheckModelAvailability;
 
 @ExtendWith(MockitoExtension.class)
 class AmazonShoppingImplTest {

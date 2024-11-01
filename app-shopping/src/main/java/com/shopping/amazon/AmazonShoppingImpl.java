@@ -1,18 +1,15 @@
 package com.shopping.amazon;
 
+import com.shopping.amazon.util.InputReaderUtil;
+import com.shopping.delivery.GetDeliveryDetails;
+import com.shopping.entity.PhoneModel;
+import com.shopping.exception.ProductNotFoundException;
+import com.shopping.phone.CheckModelAvailability;
+import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
-import com.shopping.amazon.util.InputReaderUtil;
-import com.shopping.delivery.GetDeliveryDetails;
-import com.shopping.exception.ProductNotFoundException;
-import com.shopping.phone.CheckModelAvailability;
-import com.shopping.entity.PhoneModel;
-
-import lombok.RequiredArgsConstructor;
-
-import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor

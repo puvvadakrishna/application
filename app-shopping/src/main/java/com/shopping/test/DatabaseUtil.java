@@ -1,10 +1,9 @@
 package com.shopping.test;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Component;
 
 @Component
 public class DatabaseUtil {

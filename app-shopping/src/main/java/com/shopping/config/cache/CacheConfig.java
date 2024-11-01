@@ -2,6 +2,8 @@ package com.shopping.config.cache;
 
 import static com.shopping.config.cache.CacheConstants.DEFAULT_CACHE_NAME;
 
+import java.util.Objects;
+import java.util.Optional;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.ehcache.EhCacheFactoryBean;
@@ -10,9 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.io.ClassPathResource;
-
-import java.util.Objects;
-import java.util.Optional;
 
 @Configuration
 @Import(CachePropertiesConfiguration.class)

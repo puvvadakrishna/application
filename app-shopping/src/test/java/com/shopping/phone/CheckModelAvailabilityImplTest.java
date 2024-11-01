@@ -1,16 +1,14 @@
 package com.shopping.phone;
 
-import com.shopping.exception.ProductNotFoundException;
+import static org.junit.Assert.*;
+
 import com.shopping.entity.PhoneModel;
+import com.shopping.exception.ProductNotFoundException;
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Optional;
-
-import static org.junit.Assert.*;
 
 @ExtendWith(MockitoExtension.class)
 class CheckModelAvailabilityImplTest {
