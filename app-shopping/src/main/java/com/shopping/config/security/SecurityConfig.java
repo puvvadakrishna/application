@@ -1,23 +1,27 @@
-package com.shopping.config;
+package com.shopping.config.security;
 
-import com.shopping.config.security.JsonUserDetailsService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  private final JsonUserDetailsService jsonUserDetailsService;
+  @Autowired
+  private UserDetailsService jsonUserDetailsService;
+//  private final CustomAccessDeniedHandler accessDeniedHandler;
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -27,6 +31,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Bean
   public PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();
+  }
+
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http.authorizeRequests()
+        .antMatchers("/*").permitAll()
+//        .authenticated()
+//        .and()
+//        .exceptionHandling()
+//        .accessDeniedHandler(accessDeniedHandler)
+        .and()
+        .httpBasic();
   }
 
   /*    @Override

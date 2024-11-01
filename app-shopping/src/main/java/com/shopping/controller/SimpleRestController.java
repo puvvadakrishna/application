@@ -1,6 +1,7 @@
 package com.shopping.controller;
 
 import com.shopping.customerdetails.save.Customer;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,8 +23,6 @@ public class SimpleRestController {
 
   @PostMapping("/save")
   public ResponseEntity<Customer> saveUser(@RequestBody Customer customer) {
-
-    // return ResponseEntity.status(HttpStatus.CREATED).body(customer);
-    return ResponseEntity.created(null).build();
+    return ResponseEntity.status(HttpStatus.CREATED).body(customer);
   }
 }
