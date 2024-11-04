@@ -1,5 +1,6 @@
 package com.shopping.kafka.consumer;
 
+import com.shopping.kafka.exceptions.CustomException;
 import java.util.Objects;
 import org.apache.kafka.common.TopicPartition;
 import org.slf4j.Logger;
@@ -22,9 +23,6 @@ import org.springframework.kafka.listener.DeadLetterPublishingRecoverer;
 import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.util.backoff.BackOff;
 import org.springframework.util.backoff.FixedBackOff;
-
-import com.shopping.kafka.exceptions.CustomException;
-import com.shopping.kafka.producer.ProducerConfiguration;
 
 @Configuration
 public class ConsumerConfiguration {

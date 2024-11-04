@@ -1,17 +1,12 @@
 package com.shopping.kafka.producer.wikimedia;
 
-import java.net.URI;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.common.serialization.StringSerializer;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.EventSource;
+import java.net.URI;
+import java.util.concurrent.TimeUnit;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
 
 @Service
 public class WikimediaChangesProducer {

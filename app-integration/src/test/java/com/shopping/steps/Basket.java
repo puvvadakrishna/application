@@ -1,17 +1,12 @@
 package com.shopping.steps;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.isNotNull;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootContextLoader;
-import org.springframework.test.context.ContextConfiguration;
 
 import com.shopping.basket.BasketService;
 import com.shopping.entity.Order;
-
 import io.cucumber.java8.En;
 import io.cucumber.spring.ScenarioScope;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @ScenarioScope
 // @ContextConfiguration(classes = LearningApplication.class,  loader =

@@ -3,7 +3,6 @@ package com.shopping.steps;
 import static org.junit.Assert.assertEquals;
 
 import com.shopping.vaidation.Validator;
-
 import io.cucumber.java8.En;
 
 public class Stepdefinitions implements En {

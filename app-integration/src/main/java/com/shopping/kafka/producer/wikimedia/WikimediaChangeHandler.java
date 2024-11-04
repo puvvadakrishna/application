@@ -1,12 +1,11 @@
 package com.shopping.kafka.producer.wikimedia;
 
+import com.launchdarkly.eventsource.EventHandler;
+import com.launchdarkly.eventsource.MessageEvent;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.stereotype.Component;
-import com.launchdarkly.eventsource.EventHandler;
-import com.launchdarkly.eventsource.MessageEvent;
 
 public class WikimediaChangeHandler implements EventHandler {
 

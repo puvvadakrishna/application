@@ -1,7 +1,6 @@
 package com.shopping.vaidation;
 
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 @Component
 public class Validator {

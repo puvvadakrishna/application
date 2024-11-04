@@ -1,6 +1,5 @@
 package com.shopping.amazon;
 
-
 import com.shopping.delivery.GetDeliveryDetails;
 import com.shopping.phone.CheckModelAvailability;
 import org.junit.jupiter.api.extension.ExtendWith;

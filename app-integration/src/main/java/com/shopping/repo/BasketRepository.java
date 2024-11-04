@@ -1,10 +1,9 @@
 package com.shopping.repo;
 
+import com.shopping.entity.Order;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Repository;
-
-import com.shopping.entity.Order;
 
 @Repository
 public class BasketRepository {

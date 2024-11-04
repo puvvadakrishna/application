@@ -1,7 +1,6 @@
 package com.shopping.kafka.consumer;
 
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

@@ -1,6 +1,7 @@
 package com.shopping.controller;
 
 import static org.junit.Assert.assertEquals;
+
 import com.config.TestSecurityConfig;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @WebMvcTest(value = SimpleRestController.class)
-@Import(TestSecurityConfig.class)  // Import the test security configuration
+@Import(TestSecurityConfig.class) // Import the test security configuration
 class SimpleRestControllerTest {
   @Autowired private MockMvc mockMvc;
   @MockBean private UserDetailsService userDetailsService;
@@ -50,7 +51,7 @@ class SimpleRestControllerTest {
         MockMvcRequestBuilders.post("/amazon/save")
             .accept(MediaType.APPLICATION_JSON)
             .content(customer)
-//            .with(csrf()) // needed for security
+            //            .with(csrf()) // needed for security
             .contentType(MediaType.APPLICATION_JSON);
 
     MvcResult result = mockMvc.perform(requestBuilder).andReturn();
