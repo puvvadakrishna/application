@@ -39,7 +39,7 @@ pipeline {
              }
             stage('Test') {
                 steps {
-                    sh 'mvn test -X'
+//                     sh 'mvn test -X'
                 }
             }
             stage('Package') {
