@@ -39,6 +39,7 @@ pipeline {
              }
             stage('Test') {
                 steps {
+                        echo "skipping test to save ec2!"
 //                     sh 'mvn test -X'
                 }
             }
