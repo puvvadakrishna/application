@@ -30,25 +30,25 @@ pipeline {
                         sh 'mvn clean'
                     }
              }
-            stage('Parallel Stages') {
-                    parallel {
-                         stage('Compile') {
-                                 steps {
-                                       script {
-                                                docker.withServer('unix:///var/run/docker.sock') {
-                                                    sh 'docker --version'
-                                                    sh 'mvn compile'
-                                                }
-                                       }
-                                 }
-                         }
-                        stage('Test') {
-                            steps {
-                                sh 'mvn test -X'
-                            }
-                        }
-                    }
+//             stage('Parallel Stages') {
+//                     parallel {
+             stage('Compile') {
+                     steps {
+                           script {
+                                    docker.withServer('unix:///var/run/docker.sock') {
+                                        sh 'docker --version'
+                                        sh 'mvn compile'
+                                    }
+                           }
+                     }
+             }
+            stage('Test') {
+                steps {
+                    sh 'mvn test -X'
+                }
             }
+//                     }
+//             }
             stage('Package') {
                              steps {
                                    script {
