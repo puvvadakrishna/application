@@ -36,37 +36,22 @@ pipeline {
                      steps {
                                sh 'mvn compile'
                            }
-                     }
              }
             stage('Test') {
                 steps {
                     sh 'mvn test -X'
                 }
             }
-//                     }
-//             }
             stage('Package') {
-                             steps {
-                                         sh 'mvn package -U -DskipTests=true'
-//                                    script {
-//                                                 docker.withServer('unix:///var/run/docker.sock') {
-//                                                     sh 'docker --version'
-// //                                                     sh 'mvn package -U -DskipTests=true'
-//                                                 }
-//                                            }
-                                   }
-                        }
+                 steps {
+                             sh 'mvn package -U -DskipTests=true'
+                 }
+            }
             stage('Install') {
-                             steps {
-                                        sh 'mvn clean install -U -DskipTests=true'
-//                                    script {
-//                                                 docker.withServer('unix:///var/run/docker.sock') {
-//                                                     sh 'docker --version'
-//                                                     sh 'mvn clean install -U -DskipTests=true'
-//                                                 }
-//                                            }
-//                                    }
-                        }
+                 steps {
+                            sh 'mvn clean install -U -DskipTests=true'
+                 }
+             }
             stage('Build Docker image') {
                  steps {
                         echo "TO-DO docker images steps"
