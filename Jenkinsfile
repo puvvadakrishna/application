@@ -34,11 +34,7 @@ pipeline {
 //                     parallel {
              stage('Compile') {
                      steps {
-                           script {
-                                    docker.withServer('unix:///var/run/docker.sock') {
-                                        sh 'docker --version'
-                                        sh 'mvn compile'
-                                    }
+                               sh 'mvn compile'
                            }
                      }
              }
@@ -51,23 +47,25 @@ pipeline {
 //             }
             stage('Package') {
                              steps {
-                                   script {
-                                                docker.withServer('unix:///var/run/docker.sock') {
-                                                    sh 'docker --version'
-                                                    sh 'mvn package -U -DskipTests=true'
-                                                }
-                                           }
+                                         sh 'mvn package -U -DskipTests=true'
+//                                    script {
+//                                                 docker.withServer('unix:///var/run/docker.sock') {
+//                                                     sh 'docker --version'
+// //                                                     sh 'mvn package -U -DskipTests=true'
+//                                                 }
+//                                            }
                                    }
                         }
             stage('Install') {
                              steps {
-                                   script {
-                                                docker.withServer('unix:///var/run/docker.sock') {
-                                                    sh 'docker --version'
-                                                    sh 'mvn clean install -U -DskipTests=true'
-                                                }
-                                           }
-                                   }
+                                        sh 'mvn clean install -U -DskipTests=true'
+//                                    script {
+//                                                 docker.withServer('unix:///var/run/docker.sock') {
+//                                                     sh 'docker --version'
+//                                                     sh 'mvn clean install -U -DskipTests=true'
+//                                                 }
+//                                            }
+//                                    }
                         }
             stage('Build Docker image') {
                  steps {
