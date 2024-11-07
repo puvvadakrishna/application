@@ -60,23 +60,23 @@ pipeline {
           success {
                 mail from: 'jenkins-notifications',
                      to: 'puvvada.krishna@gmail.com',
-                     subject: "Build successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                     body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} is good.
+                     subject: "AWS Build successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                     body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER}
                               Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
                   }
           failure {
                mail from: 'jenkins-notifications',
                     to: 'puvvada.krishna@gmail.com',
-                    subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                    body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} has failed.
+                    subject: "AWS Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                    body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER}
                              Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
           }
           always{
                 echo 'job executed'
                  mail from: 'jenkins-notifications',
                     to: 'puvvada.krishna@gmail.com',
-                    subject: "Build Triggered: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                    body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER} has failed.
+                    subject: "AWS Build Triggered: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                    body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER}
                              Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
           }
           aborted{
