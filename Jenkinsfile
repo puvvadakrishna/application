@@ -43,16 +43,16 @@ pipeline {
 //                     sh 'mvn test -X'
                 }
             }
-            stage('Package') {
-                 steps {
-                             sh 'mvn package -U -DskipTests=true'
-                 }
-            }
-            stage('Install') {
-                 steps {
-                            sh 'mvn clean install -U -DskipTests=true'
-                 }
-             }
+//             stage('Package') {
+//                  steps {
+//                              sh 'mvn package -U -DskipTests=true'
+//                  }
+//             }
+//             stage('Install') {
+//                  steps {
+//                             sh 'mvn clean install -U -DskipTests=true'
+//                  }
+//              }
             stage('Build Docker image') {
                  steps {
                         echo "TO-DO docker images steps"
