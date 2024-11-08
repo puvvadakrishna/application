@@ -62,14 +62,14 @@ pipeline {
                      to: 'puvvada.krishna@gmail.com',
                      subject: "AWS Build successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                      body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER}
-                              Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
+                              Check console output at ${env.BUILD_URL}
                   }
           failure {
                mail from: 'jenkins-notifications',
                     to: 'puvvada.krishna@gmail.com',
                     subject: "AWS Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER}
-                             Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
+                             Check console output at ${env.BUILD_URL}
           }
           always{
                 echo 'job executed'
@@ -77,7 +77,7 @@ pipeline {
                     to: 'puvvada.krishna@gmail.com',
                     subject: "AWS Build Triggered: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: """Build ${env.JOB_NAME} - #${env.BUILD_NUMBER}
-                             Check console output at <a href="${env.BUILD_URL}">${env.BUILD_URL}</a>"""
+                             Check console output at ${env.BUILD_URL}
           }
           aborted{
             echo 'Build aborted'
