@@ -2,30 +2,31 @@ package com.shopping.config.security;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.core.io.Resource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+
 @Service
 public class JsonUserDetailsService implements UserDetailsService {
 
+  @Value("classpath:users.json")
+  private Resource userJsonResource;
   private List<com.shopping.config.security.User> users;
 
-  public JsonUserDetailsService() throws IOException {
-    ObjectMapper mapper = new ObjectMapper();
-    users =
-        mapper.readValue(
-            new File(
-                "C:\\Users\\puvva\\IdeaProjects\\app\\app-shopping\\src\\main\\resources\\users.json"),
-            new TypeReference<List<com.shopping.config.security.User>>() {});
+  @PostConstruct
+  private void loadUsers() throws IOException {
+    ObjectMapper objectMapper = new ObjectMapper();
+    users = objectMapper.readValue(userJsonResource.getInputStream(), new TypeReference<List<User>>() {});
   }
-
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     return users.stream()
