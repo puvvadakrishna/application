@@ -1,6 +1,8 @@
 package com.shopping.entity;
 
 import javax.persistence.*;
+
+import com.shopping.validator.RequestPayLoad;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
@@ -9,7 +11,7 @@ import lombok.Setter;
 @Table(name = "employee")
 @Setter
 @Getter
-public class Employee {
+public class Employee implements RequestPayLoad {
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_gen")
@@ -18,4 +20,5 @@ public class Employee {
 
   @NonNull private String firstname;
   @NonNull private String lastname;
+  @NonNull private String employmentType;
 }

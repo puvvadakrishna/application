@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class SecuredController {
 
   @GetMapping
-  @Cacheable(value = DEFAULT_CACHE_NAME, key = "#id")
   @Secured("ROLE_USER")
+  @Cacheable(value = DEFAULT_CACHE_NAME, key = "#id")
   public String getData(@RequestParam String id) {
     return "hello-" + id;
   }

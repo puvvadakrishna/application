@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,6 +19,7 @@ public class EmployeeController {
   private final EmployeeService employeeService;
 
   @GetMapping("/all")
+  @Secured("ROLE_USER")
   public List<Employee> getEmployees() {
     return employeeRepository.findAll();
   }
@@ -28,6 +30,7 @@ public class EmployeeController {
   }
 
   @PostMapping
+  @Secured("ROLE_USER")
   public Employee save(@RequestBody Employee emp) {
     return employeeService.save(emp);
   }
