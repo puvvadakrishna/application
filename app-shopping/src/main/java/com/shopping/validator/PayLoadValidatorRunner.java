@@ -1,10 +1,14 @@
 package com.shopping.validator;
 
-import java.util.List;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+@Component
+@RequiredArgsConstructor
 public class PayLoadValidatorRunner {
 
-  List<PayLoadValidator> validatorList;
+  private final List<PayLoadValidator> validatorList;
 
   public void validateRequestPayLoad(RequestPayLoad payload) {
 

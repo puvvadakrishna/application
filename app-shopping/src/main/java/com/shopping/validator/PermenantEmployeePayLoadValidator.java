@@ -1,7 +1,9 @@
 package com.shopping.validator;
 
 import com.shopping.entity.Employee;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PermenantEmployeePayLoadValidator extends PayLoadValidator<Employee> {
 
   @Override
@@ -11,8 +13,5 @@ public class PermenantEmployeePayLoadValidator extends PayLoadValidator<Employee
   }
 
   @Override
-  void validatePayLoad(Employee payload) {
-
-    
-  }
+  void validatePayLoad(Employee payload) {}
 }
