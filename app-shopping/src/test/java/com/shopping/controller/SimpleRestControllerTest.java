@@ -27,10 +27,10 @@ class SimpleRestControllerTest {
   @Test
   void helloTest() throws Exception {
 
-    RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/amazon/hello?name=ramu");
+    RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/amazon/hello?name=rama");
 
     MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-    String expected = "hello ramu";
+    String expected = "hello rama";
     Assertions.assertEquals(expected, result.getResponse().getContentAsString());
   }
 

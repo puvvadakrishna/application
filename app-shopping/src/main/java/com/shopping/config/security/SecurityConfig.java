@@ -17,13 +17,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 // @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  @Autowired private UserDetailsService jsonUserDetailsService;
+  @Autowired private UserDetailsService dataService;
 
   //  private final CustomAccessDeniedHandler accessDeniedHandler;
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.userDetailsService(jsonUserDetailsService).passwordEncoder(passwordEncoder());
+    auth.userDetailsService(dataService).passwordEncoder(passwordEncoder());
   }
 
   @Bean

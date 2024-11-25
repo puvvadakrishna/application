@@ -6,7 +6,6 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-@EnableCaching
 public class ShoppingApiApplication {
 
   public static void main(String[] args) {
