@@ -1,15 +1,13 @@
-class Vechile {
+class Vehicle {
   public String tyreShape() throws NullPointerException {
     return "square";
   }
 }
-
-public class Car extends Vechile {
+public class Car extends Vehicle {
   public static void main(String[] args) {
-    Car veh = new Vechile();
-    System.out.println(veh.tyreShape());
+    Car car = new Vechile();
+    System.out.println(car.tyreShape());
   }
-
   public String tyreShape() throws Exception {
     return "round";
   }

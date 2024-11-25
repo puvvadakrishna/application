@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @TestConfiguration
 @Order(99)
 public class TestSecurityConfig extends WebSecurityConfigurerAdapter {
-
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.csrf()

@@ -31,13 +31,9 @@ public class PhoneServiceImpl implements PhoneService {
     return modelRepository.saveAll(model);
   }
 
-  @Cacheable(value = "testCache", key = "{#modelNo}")
+  @Cacheable(value = "testCache", key = "key1")
   @Override
   public PhoneModel getPhoneModelByModelNo(String modelNo) {
-
-    log.info("--------------------------------------------------------------------------");
-    log.info("-----------cache not worked, trying to load from database-----------------");
-    log.info("--------------------------------------------------------------------------");
 
     return modelRepository.findByModelNo(modelNo);
   }
