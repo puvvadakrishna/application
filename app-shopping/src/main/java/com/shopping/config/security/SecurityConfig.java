@@ -50,7 +50,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .disable() // Disable CSRF
         .authorizeRequests()
         .anyRequest()
-        .authenticated();
+        .authenticated()
+        .and()
+        .httpBasic();
   }
 
   /*    @Override
