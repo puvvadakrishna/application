@@ -1,4 +1,4 @@
-package com.shopping.customerdetails.save;
+package com.shopping.model;
 
 import java.io.Serializable;
 import lombok.Getter;

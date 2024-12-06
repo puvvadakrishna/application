@@ -1,4 +1,4 @@
-package com.shopping.entity;
+package com.shopping.model;
 
 import javax.persistence.*;
 

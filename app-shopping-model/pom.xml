@@ -7,14 +7,10 @@
         <artifactId>app</artifactId>
         <version>0.0.8-SNAPSHOT</version>
     </parent>
-    <artifactId>app-shopping</artifactId>
-    <name>app-shopping</name>
-    <description>app-shopping</description>
+    <artifactId>app-shopping-model</artifactId>
+    <name>app-shopping-model</name>
+    <description>app-shopping-model</description>
     <dependencies>
-        <dependency>
-            <groupId>com.shopping</groupId>
-            <artifactId>app-shopping-model</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
