@@ -1,6 +1,6 @@
 package com.shopping.service;
 
-import com.shopping.entity.Employee;
+import com.shopping.model.Employee;
 import com.shopping.exception.RecordNotFoundException;
 import com.shopping.repo.EmployeeRepository;
 import java.util.Optional;

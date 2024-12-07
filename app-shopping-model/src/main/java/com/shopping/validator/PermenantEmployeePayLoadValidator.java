@@ -1,6 +1,6 @@
 package com.shopping.validator;
 
-import com.shopping.entity.Employee;
+import com.shopping.model.Employee;
 import org.springframework.stereotype.Component;
 
 @Component

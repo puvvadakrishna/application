@@ -28,7 +28,7 @@
     <modules>
         <module>app-shopping-model</module>
         <module>app-shopping-api</module>
-        <!--        <module>app-integration</module>-->
+                <module>app-integration</module>
     </modules>
 
     <dependencies>

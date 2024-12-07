@@ -1,6 +1,6 @@
 package com.shopping.repo;
 
-import com.shopping.entity.Employee;
+import com.shopping.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

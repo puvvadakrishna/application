@@ -1,7 +1,6 @@
 package com.shopping.validator;
 
-import com.shopping.entity.Employee;
-import org.apache.kafka.common.errors.InvalidRequestException;
+import com.shopping.model.Employee;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,7 +16,7 @@ public class ContractEmployeePayLoadValidator extends PayLoadValidator<Employee>
   void validatePayLoad(Employee payload) {
 
     if (payload.getId() == 10) {
-      throw new InvalidRequestException("Id can't be for a Contract employee");
+      throw new RuntimeException("Id can't be for a Contract employee");
     }
   }
 }

@@ -6,6 +6,7 @@ import com.shopping.validator.RequestPayLoad;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import com.shopping.validator.RequestPayLoad;
 
 @Entity
 @Table(name = "employee")
