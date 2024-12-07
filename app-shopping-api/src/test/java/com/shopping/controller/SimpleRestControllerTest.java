@@ -39,7 +39,7 @@ class SimpleRestControllerTest {
     RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/amazon/customer?name=somu");
     MvcResult result = mockMvc.perform(requestBuilder).andReturn();
     String expected =
-        "{\"customerName\":\"somu\",\"customerAddress\":\"guntur\",\"customerOrder\":null}";
+        "{\"customerName\":\"somu\",\"customerAddress\":\"guntur\"}";
     assertEquals(expected, result.getResponse().getContentAsString());
   }
 

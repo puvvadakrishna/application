@@ -6,7 +6,7 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.shopping.entity.Employee;
+import com.shopping.model.Employee;
 import com.shopping.repo.EmployeeRepository;
 import com.shopping.service.EmployeeService;
 import com.shopping.validator.PayLoadValidatorRunner;

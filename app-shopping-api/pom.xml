@@ -14,7 +14,12 @@
         <dependency>
             <groupId>com.shopping</groupId>
             <artifactId>app-shopping-model</artifactId>
-            <version>0.0.8-SNAPSHOT</version>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

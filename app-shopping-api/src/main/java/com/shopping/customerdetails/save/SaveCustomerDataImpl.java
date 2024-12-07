@@ -18,8 +18,8 @@ public class SaveCustomerDataImpl implements SaveCustomerData {
 
   public String getNameAndAdress(String name) {
     return details.stream()
-        .filter(i -> i.getCustomerName().equalsIgnoreCase(name))
-        .map(i -> i.getCustomerAddress())
+        .filter(i -> i.getName().equalsIgnoreCase(name))
+        .map(i -> i.getAddress())
         .collect(Collectors.joining(", "));
   }
 
