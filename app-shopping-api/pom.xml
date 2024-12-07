@@ -7,9 +7,9 @@
         <artifactId>app</artifactId>
         <version>0.0.8-SNAPSHOT</version>
     </parent>
-    <artifactId>app-shopping</artifactId>
-    <name>app-shopping</name>
-    <description>app-shopping</description>
+    <artifactId>app-shopping-api</artifactId>
+    <name>app-shopping-api</name>
+    <description>app-shopping-api</description>
     <dependencies>
         <dependency>
             <groupId>com.shopping</groupId>

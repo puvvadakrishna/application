@@ -1,4 +1,0 @@
-docker run -d -p 8085:8080 -p 1521:1521 -v D:/oracle/oradata:/u01/app/oracle truevoly/oracle-12c
-
-
-docker pull truevoly/oracle-12c

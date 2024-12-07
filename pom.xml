@@ -26,7 +26,8 @@
 
     </properties>
     <modules>
-        <module>app-shopping</module>
+        <module>app-shopping-model</module>
+        <module>app-shopping-api</module>
         <!--        <module>app-integration</module>-->
     </modules>
 
