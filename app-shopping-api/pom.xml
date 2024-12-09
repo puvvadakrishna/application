@@ -107,6 +107,16 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <parallel>both</parallel>  <!-- Run both test methods and test classes in parallel -->
+<!--                    <threadCount>4</threadCount>  &lt;!&ndash; 4 threads for parallel execution &ndash;&gt;-->
+                    <useUnlimitedThreads>true</useUnlimitedThreads>  <!-- Limit threads to the specified count -->
+                    <perCoreThreadCount>false</perCoreThreadCount>  <!-- Don't base thread count on CPU cores -->
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco-maven-plugin.version}</version>

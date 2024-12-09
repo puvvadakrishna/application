@@ -6,8 +6,8 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class ShoppingApiApplication {
+public class Application {
     public static void main(String[] args) {
-        SpringApplication.run(ShoppingApiApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }

@@ -1,4 +1,4 @@
-package com.cucumber;
+package com.shopping;
 
 public class Validator {
 
