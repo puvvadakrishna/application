@@ -29,6 +29,7 @@
         <module>app-shopping-model</module>
         <module>app-shopping-api</module>
         <module>app-integration</module>
+        <module>app-shopping-acceptance-tests</module>
     </modules>
 
     <dependencies>
@@ -40,6 +41,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.14.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>7.14.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
