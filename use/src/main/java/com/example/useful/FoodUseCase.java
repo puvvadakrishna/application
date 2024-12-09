@@ -32,7 +32,7 @@ public Cat implements AnimalService{
 /*
 
 If a request is to Controller with a input(string) need to call to call the applicable implemetion based on the request data
-
+how would you call the consume method ?
 how do you approach this? you could change the pseduo code/ add / remove any methods
 
  */
