@@ -7,7 +7,7 @@
         <artifactId>app-shopping</artifactId>
         <version>0.0.8-SNAPSHOT</version>
     </parent>
-    <artifactId>app-integration</artifactId>
+    <artifactId>app-shopping-integration</artifactId>
     <name>app-integration</name>
     <description>app-integration</description>
     <dependencies>
