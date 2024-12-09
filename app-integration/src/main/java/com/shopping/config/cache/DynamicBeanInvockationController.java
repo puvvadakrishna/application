@@ -1,7 +1,6 @@
 package com.shopping.controller;
 
 import com.shopping.kafka.producer.Producer;
-import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ public class DynamicBeanInvockationController {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Producer.class);
 
-  @Autowired private Map<String, OrderProcesser> orderProcesserMap;
+  @Autowired private Map<String, com.shopping.controller.OrderProcesser> orderProcesserMap;
 
   @GetMapping
   public ResponseEntity<String> publish(@RequestParam("message") String message) {

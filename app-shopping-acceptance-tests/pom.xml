@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.shopping</groupId>
-        <artifactId>app</artifactId>
+        <artifactId>app-shopping</artifactId>
         <version>0.0.8-SNAPSHOT</version>
     </parent>
     <artifactId>app-shopping-acceptance-tests</artifactId>
@@ -14,7 +14,8 @@
         <dependency>
             <groupId>com.shopping</groupId>
             <artifactId>app-shopping-api</artifactId>
-            <version>0.0.8-SNAPSHOT</version>
+            <version>${project.version}</version>
+            <classifier>service-classes</classifier>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -35,7 +36,12 @@
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.20.1</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

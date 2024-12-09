@@ -2,6 +2,7 @@ package com.shopping;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java8.En;
 
 public class StepDefinitions implements En {

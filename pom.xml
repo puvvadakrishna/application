@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.shopping</groupId>
-    <artifactId>app</artifactId>
+    <artifactId>app-shopping</artifactId>
     <version>0.0.8-SNAPSHOT</version>
-    <name>app</name>
+    <name>app-shopping</name>
     <packaging>pom</packaging>
 
     <description>app-sample-examples</description>
@@ -27,10 +27,19 @@
     </properties>
     <modules>
         <module>app-shopping-model</module>
-<!--        <module>app-shopping-api</module>-->
-<!--        <module>app-integration</module>-->
+        <module>app-shopping-api</module>
+        <module>app-integration</module>
         <module>app-shopping-acceptance-tests</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.shopping</groupId>
+                <artifactId>app-shopping-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -50,17 +59,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>jsr305</artifactId>
-            <version>3.0.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>
@@ -70,8 +72,8 @@
                 <configuration>
                     <parallel>both</parallel>  <!-- Run both test methods and test classes in parallel -->
                     <threadCount>4</threadCount>  <!-- 4 threads for parallel execution -->
-                    <useUnlimitedThreads>false</useUnlimitedThreads>  <!-- Limit threads to the specified count -->
-                    <perCoreThreadCount>false</perCoreThreadCount>  <!-- Don't base thread count on CPU cores -->
+                    <useUnlimitedThreads>true</useUnlimitedThreads>  <!-- Limit threads to the specified count -->
+<!--                    <perCoreThreadCount>false</perCoreThreadCount>  &lt;!&ndash; Don't base thread count on CPU cores &ndash;&gt;-->
                 </configuration>
             </plugin>
             <plugin>
