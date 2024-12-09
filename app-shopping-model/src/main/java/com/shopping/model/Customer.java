@@ -1,8 +1,8 @@
 package com.shopping.model;
 
-import java.io.Serializable;
-
 import lombok.*;
+
+import java.io.Serializable;
 
 @Getter
 @Setter
@@ -11,6 +11,6 @@ import lombok.*;
 @AllArgsConstructor
 public class Customer implements Serializable {
 
-  private String name;
-  private String address;
+    private String name;
+    private String address;
 }

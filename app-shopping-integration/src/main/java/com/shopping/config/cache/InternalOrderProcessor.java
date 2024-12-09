@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class InternalOrderProcessor implements OrderProcesser {
 
-  public String test() {
+    public String test() {
 
-    return this.getClass().getName();
-  }
+        return this.getClass().getName();
+    }
 }

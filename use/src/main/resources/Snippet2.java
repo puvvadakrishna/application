@@ -3,6 +3,7 @@ class Vechile {
         return "square";
     }
 }
+
 public class Car extends Vechile {
     public static void main(String[] args) {
         Vechile veh = new Car();
@@ -14,4 +15,4 @@ public class Car extends Vechile {
     }
 }
 
-// output - ? Null pointerException
+// output -

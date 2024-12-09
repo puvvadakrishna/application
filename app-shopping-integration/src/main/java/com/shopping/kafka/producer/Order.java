@@ -1,11 +1,6 @@
 package com.shopping.kafka.producer;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Builder
 @ToString
@@ -15,7 +10,7 @@ import lombok.ToString;
 @Getter
 public class Order {
 
-  private String id;
+    private String id;
 
-  private String name;
+    private String name;
 }

@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CustomerData {
 
-  static final List<Customer> details =
-      Arrays.asList(
-          new Customer(1, "alex", "Newyork"),
-          new Customer(2, "aman", "India"),
-          new Customer(3, "andy", "London"));
+    static final List<Customer> details =
+            Arrays.asList(
+                    new Customer(1, "alex", "Newyork"),
+                    new Customer(2, "aman", "India"),
+                    new Customer(3, "andy", "London"));
 
-  public static List<Customer> getDetails() {
-    return details;
-  }
+    public static List<Customer> getDetails() {
+        return details;
+    }
 }

@@ -10,9 +10,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CachePropertiesConfiguration {
 
-  @Bean
-  @ConfigurationProperties(prefix = CACHE_PROPERTIES_PREFIX + DEFAULT_CACHE_NAME)
-  public CacheProperties defaultCacheProperties() {
-    return new CacheProperties();
-  }
+    @Bean
+    @ConfigurationProperties(prefix = CACHE_PROPERTIES_PREFIX + DEFAULT_CACHE_NAME)
+    public CacheProperties defaultCacheProperties() {
+        return new CacheProperties();
+    }
 }

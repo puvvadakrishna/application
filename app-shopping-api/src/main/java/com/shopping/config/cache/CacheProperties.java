@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class CacheProperties {
 
-  private Long timeToLiveInSeconds;
-  private Long maxEntriesInMemory;
+    private Long timeToLiveInSeconds;
+    private Long maxEntriesInMemory;
 }

@@ -16,17 +16,21 @@ import javax.transaction.Transactional;
 public class PhoneServiceImpl implements PhoneService {
     private final PhoneRepository modelRepository;
     private final SimRepository simRepo;
+
     public PhoneServiceImpl(PhoneRepository modelRepository) {
         this.modelRepository = modelRepository;
     }
+
     public PhoneModel savePhone(PhoneModel model) {
         return modelRepository.save(updateColor(model));
     }
+
     public List<PhoneModel> savePhones(List<PhoneModel> models) {
 
         List<PhoneModel> model = models.stream().map(this::updateColor).collect(Collectors.toList());
         return modelRepository.saveAll(model);
     }
+
     public Sim savePhone(Sim model) {
         return simRepo.save(model));
     }
@@ -35,6 +39,7 @@ public class PhoneServiceImpl implements PhoneService {
     public PhoneModel getPhoneModelByModelNo(String modelNo) {
         return modelRepository.findByModelNo(modelNo);
     }
+
     private PhoneModel updateColor(PhoneModel modle) {
         modle.setModelColour(modle.getModelColour().toUpperCase());
         return modle;
@@ -43,6 +48,7 @@ public class PhoneServiceImpl implements PhoneService {
     public Long addPhone(PhoneModel pm) {
         return modelRepository.save(pm).getId();
     }
+
     @Transactional
     public void deletePhone(String modelPrice) {
         modelRepository.deleteBymodelPrice(modelPrice);

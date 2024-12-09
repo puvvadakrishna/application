@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class Customer {
-  private int id = 5;
-  private String name = "Alex";
-  private String country = "Finland";
+    private int id = 5;
+    private String name = "Alex";
+    private String country = "Finland";
 }

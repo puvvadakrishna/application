@@ -14,18 +14,17 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(value = SecuredController.class)
 class SecuredControllerTest {
-  @Autowired private MockMvc mockMvc;
-  @MockBean private UserDetailsService userDetailsService;
+    @Autowired private MockMvc mockMvc;
+    @MockBean private UserDetailsService userDetailsService;
 
-  @Test
-  @WithMockUser(
-      username = "user",
-      roles = {"USER"})
-  void helloTest() throws Exception {
+    @Test
+    @WithMockUser(
+            username = "user",
+            roles = {"USER"})
+    void helloTest() throws Exception {
 
-    mockMvc
-        .perform(get("/").param("id", "123"))
-        .andExpect(status().isOk())
-        .andExpect(content().string("hello-123"));
-  }
+        mockMvc.perform(get("/").param("id", "123"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("hello-123"));
+    }
 }

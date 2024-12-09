@@ -4,8 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.shopping.basket.BasketService;
 import com.shopping.entity.Order;
+
 import io.cucumber.java8.En;
 import io.cucumber.spring.ScenarioScope;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 @ScenarioScope
@@ -13,37 +15,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 // SpringBootContextLoader.class)
 public class Basket implements En {
 
-  @Autowired BasketService basket;
+    @Autowired BasketService basket;
 
-  Order order;
+    Order order;
 
-  public Basket() {
-    Given(
-        "^When and user selects an item to add to the basket$",
-        () -> {
-          order = getOrder();
-        });
-    When(
-        "^the selected quality is greater than (\\d+)$",
-        (Integer arg0) -> {
-          if (arg0 >= 0) {
-            basket.add(order);
-          }
-        });
-    Then(
-        "^item should be added to basket$",
-        () -> {
-          assertThat(basket.get(null)).isNotNull();
-        });
-    And(
-        "^inventory should be updated$",
-        () -> {
-          assertThat(true).isTrue();
-        });
-  }
+    public Basket() {
+        Given(
+                "^When and user selects an item to add to the basket$",
+                () -> {
+                    order = getOrder();
+                });
+        When(
+                "^the selected quality is greater than (\\d+)$",
+                (Integer arg0) -> {
+                    if (arg0 >= 0) {
+                        basket.add(order);
+                    }
+                });
+        Then(
+                "^item should be added to basket$",
+                () -> {
+                    assertThat(basket.get(null)).isNotNull();
+                });
+        And(
+                "^inventory should be updated$",
+                () -> {
+                    assertThat(true).isTrue();
+                });
+    }
 
-  private Order getOrder() {
+    private Order getOrder() {
 
-    return Order.builder().name("Apple").quantity(1).build();
-  }
+        return Order.builder().name("Apple").quantity(1).build();
+    }
 }

@@ -2,9 +2,9 @@
 <configuration>
 
     <!-- Define properties for log file location and log pattern -->
-<!--    <property name="LOG_PATH" value="/home/ec2-user/logs" />-->
-    <property name="LOG_PATH" value="./logs" />
-    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" />
+    <!--    <property name="LOG_PATH" value="/home/ec2-user/logs" />-->
+    <property name="LOG_PATH" value="./logs"/>
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"/>
 
     <!-- Rolling File Appender with Size-Based Rollover -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -29,6 +29,6 @@
 
     <!-- Root logger with INFO level, logging to both console and file -->
     <root level="INFO">
-        <appender-ref ref="FILE" />
+        <appender-ref ref="FILE"/>
     </root>
 </configuration>

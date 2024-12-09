@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SecuredController {
 
-  @GetMapping
-  @Secured("ROLE_USER")
-  @Cacheable(value = DEFAULT_CACHE_NAME, key = "#id")
-  public String getData(@RequestParam String id) {
-    return "hello-" + id;
-  }
+    @GetMapping
+    @Secured("ROLE_USER")
+    @Cacheable(value = DEFAULT_CACHE_NAME, key = "#id")
+    public String getData(@RequestParam String id) {
+        return "hello-" + id;
+    }
 }

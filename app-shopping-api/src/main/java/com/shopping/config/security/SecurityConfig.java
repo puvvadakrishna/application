@@ -18,75 +18,75 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 // @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  @Autowired private UserDetailsService dataService;
+    @Autowired private UserDetailsService dataService;
 
-  //  private final CustomAccessDeniedHandler accessDeniedHandler;
+    //  private final CustomAccessDeniedHandler accessDeniedHandler;
 
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.userDetailsService(dataService).passwordEncoder(passwordEncoder());
-  }
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(dataService).passwordEncoder(passwordEncoder());
+    }
 
-  @Bean
-  public PasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
-  }
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-  //    @Override
-  //    protected void configure(HttpSecurity http) throws Exception {
-  //      http.authorizeRequests()
-  //          .antMatchers("/*").permitAll()
-  //  //        .authenticated()
-  //  //        .and()
-  //  //        .exceptionHandling()
-  //  //        .accessDeniedHandler(accessDeniedHandler)
-  //          .and()
-  //          .httpBasic();
-  //    }
+    //    @Override
+    //    protected void configure(HttpSecurity http) throws Exception {
+    //      http.authorizeRequests()
+    //          .antMatchers("/*").permitAll()
+    //  //        .authenticated()
+    //  //        .and()
+    //  //        .exceptionHandling()
+    //  //        .accessDeniedHandler(accessDeniedHandler)
+    //          .and()
+    //          .httpBasic();
+    //    }
 
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http.csrf()
-        .disable() // Disable CSRF
-        .authorizeRequests()
-        .anyRequest()
-        .authenticated()
-        .and()
-        .httpBasic();
-  }
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf()
+                .disable() // Disable CSRF
+                .authorizeRequests()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .httpBasic();
+    }
 
-  /*    @Override
-  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-      auth.inMemoryAuthentication()
-              .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN")
-              .and()
-              .withUser("user").password(passwordEncoder().encode("user123")).roles("USER");
-  }*/
+    /*    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN")
+                .and()
+                .withUser("user").password(passwordEncoder().encode("user123")).roles("USER");
+    }*/
 
-  //    You can also specify role-based access directly in your controller using @PreAuthorize or
-  // @Secured.
-  //    @Override
-  /*    protected void configure(HttpSecurity http) throws Exception {
-      http
-              .authorizeRequests()
-              .antMatchers("/admin/**").hasRole("ADMIN")  // Only users with 'ADMIN' role can access /admin endpoints
-              .antMatchers("/user/**").hasRole("USER")
-              .antMatchers("/*").hasAnyRole("USER")  // USER and ADMIN can access /user endpoints
-                              // Only users with 'USER' role can access /user endpoints
-              .anyRequest().authenticated() // Any other request requires authentication
-              .and()
-              .httpBasic(); // Basic auth for simplicity
-  }*/
+    //    You can also specify role-based access directly in your controller using @PreAuthorize or
+    // @Secured.
+    //    @Override
+    /*    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                .antMatchers("/admin/**").hasRole("ADMIN")  // Only users with 'ADMIN' role can access /admin endpoints
+                .antMatchers("/user/**").hasRole("USER")
+                .antMatchers("/*").hasAnyRole("USER")  // USER and ADMIN can access /user endpoints
+                                // Only users with 'USER' role can access /user endpoints
+                .anyRequest().authenticated() // Any other request requires authentication
+                .and()
+                .httpBasic(); // Basic auth for simplicity
+    }*/
 
-  //    @Override
-  //    protected void configure(HttpSecurity http) throws Exception {
-  //        http
-  //                .authorizeRequests()
-  //                .antMatchers("/admin/**").hasRole("ADMIN")
-  //                .antMatchers("/*").hasRole("USER")
-  //                .anyRequest().authenticated()
-  //                .and()
-  //                .httpBasic();
-  //    }
+    //    @Override
+    //    protected void configure(HttpSecurity http) throws Exception {
+    //        http
+    //                .authorizeRequests()
+    //                .antMatchers("/admin/**").hasRole("ADMIN")
+    //                .antMatchers("/*").hasRole("USER")
+    //                .anyRequest().authenticated()
+    //                .and()
+    //                .httpBasic();
+    //    }
 
 }

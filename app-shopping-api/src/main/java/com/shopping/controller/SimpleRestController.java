@@ -1,6 +1,7 @@
 package com.shopping.controller;
 
 import com.shopping.model.Customer;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,20 +10,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("amazon")
 public class SimpleRestController {
 
-  @GetMapping("/hello")
-  public ResponseEntity<String> hello(@RequestParam String name) {
+    @GetMapping("/hello")
+    public ResponseEntity<String> hello(@RequestParam String name) {
 
-    return ResponseEntity.ok().body("hello " + name);
-  }
+        return ResponseEntity.ok().body("hello " + name);
+    }
 
-  @GetMapping("/customer")
-  public ResponseEntity<Customer> getCustomer(@RequestParam String name) {
+    @GetMapping("/customer")
+    public ResponseEntity<Customer> getCustomer(@RequestParam String name) {
 
-    return ResponseEntity.ok().body(new Customer(name, "guntur"));
-  }
+        return ResponseEntity.ok().body(new Customer(name, "guntur"));
+    }
 
-  @PostMapping("/save")
-  public ResponseEntity<Customer> saveUser(@RequestBody Customer customer) {
-    return ResponseEntity.status(HttpStatus.CREATED).body(customer);
-  }
+    @PostMapping("/save")
+    public ResponseEntity<Customer> saveUser(@RequestBody Customer customer) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+    }
 }

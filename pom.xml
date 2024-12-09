@@ -73,7 +73,7 @@
                     <parallel>both</parallel>  <!-- Run both test methods and test classes in parallel -->
                     <threadCount>4</threadCount>  <!-- 4 threads for parallel execution -->
                     <useUnlimitedThreads>true</useUnlimitedThreads>  <!-- Limit threads to the specified count -->
-<!--                    <perCoreThreadCount>false</perCoreThreadCount>  &lt;!&ndash; Don't base thread count on CPU cores &ndash;&gt;-->
+                    <!--                    <perCoreThreadCount>false</perCoreThreadCount>  &lt;!&ndash; Don't base thread count on CPU cores &ndash;&gt;-->
                 </configuration>
             </plugin>
             <plugin>

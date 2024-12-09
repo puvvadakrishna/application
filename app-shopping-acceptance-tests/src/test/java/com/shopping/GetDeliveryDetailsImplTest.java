@@ -6,6 +6,7 @@ import static org.mockito.Mockito.when;
 import com.shopping.customerdetails.save.SaveCustomerData;
 import com.shopping.delivery.GetDeliveryDetailsImpl;
 import com.shopping.deliverypartner.DeliveryHub;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,12 +16,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class GetDeliveryDetailsImplTest {
-    @InjectMocks
-    GetDeliveryDetailsImpl gdd;
-    @Mock
-    SaveCustomerData scd;
-    @Mock
-    DeliveryHub dh;
+    @InjectMocks GetDeliveryDetailsImpl gdd;
+    @Mock SaveCustomerData scd;
+    @Mock DeliveryHub dh;
 
     @Test
     void deliverOrderTest() {

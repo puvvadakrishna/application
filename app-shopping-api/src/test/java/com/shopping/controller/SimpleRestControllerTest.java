@@ -3,6 +3,7 @@ package com.shopping.controller;
 import static org.junit.Assert.assertEquals;
 
 import com.config.TestSecurityConfig;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,42 +22,40 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 @WebMvcTest(value = SimpleRestController.class)
 @Import(TestSecurityConfig.class) // Import the test security configuration
 class SimpleRestControllerTest {
-  @Autowired private MockMvc mockMvc;
-  @MockBean private UserDetailsService userDetailsService;
+    @Autowired private MockMvc mockMvc;
+    @MockBean private UserDetailsService userDetailsService;
 
-  @Test
-  void helloTest() throws Exception {
+    @Test
+    void helloTest() throws Exception {
 
-    RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/amazon/hello?name=rama");
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/amazon/hello?name=rama");
 
-    MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-    String expected = "hello rama";
-    Assertions.assertEquals(expected, result.getResponse().getContentAsString());
-  }
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        String expected = "hello rama";
+        Assertions.assertEquals(expected, result.getResponse().getContentAsString());
+    }
 
-  @Test
-  void getCustomerTest() throws Exception {
-    RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/amazon/customer?name=somu");
-    MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-    String expected =
-        "{\"name\":\"somu\",\"address\":\"guntur\"}";
-    assertEquals(expected, result.getResponse().getContentAsString());
-  }
+    @Test
+    void getCustomerTest() throws Exception {
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/amazon/customer?name=somu");
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        String expected = "{\"name\":\"somu\",\"address\":\"guntur\"}";
+        assertEquals(expected, result.getResponse().getContentAsString());
+    }
 
-  @Test
-  void saveUserTest() throws Exception {
-    String customer =
-        "{\"name\":\"somu\",\"address\":\"guntur\"}";
-    RequestBuilder requestBuilder =
-        MockMvcRequestBuilders.post("/amazon/save")
-            .accept(MediaType.APPLICATION_JSON)
-            .content(customer)
-            //            .with(csrf()) // needed for security
-            .contentType(MediaType.APPLICATION_JSON);
+    @Test
+    void saveUserTest() throws Exception {
+        String customer = "{\"name\":\"somu\",\"address\":\"guntur\"}";
+        RequestBuilder requestBuilder =
+                MockMvcRequestBuilders.post("/amazon/save")
+                        .accept(MediaType.APPLICATION_JSON)
+                        .content(customer)
+                        //            .with(csrf()) // needed for security
+                        .contentType(MediaType.APPLICATION_JSON);
 
-    MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
-    MockHttpServletResponse response = result.getResponse();
-    assertEquals(HttpStatus.CREATED.value(), response.getStatus());
-  }
+        MockHttpServletResponse response = result.getResponse();
+        assertEquals(HttpStatus.CREATED.value(), response.getStatus());
+    }
 }
