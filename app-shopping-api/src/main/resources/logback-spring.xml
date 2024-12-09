@@ -3,7 +3,7 @@
 
     <!-- Define properties for log file location and log pattern -->
 <!--    <property name="LOG_PATH" value="/home/ec2-user/logs" />-->
-    <property name="LOG_PATH" value="./logs" />
+    <property name="LOG_PATH" value="..//..//logs" />
     <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" />
 
     <!-- Rolling File Appender with Size-Based Rollover -->
