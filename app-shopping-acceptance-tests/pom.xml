@@ -15,7 +15,7 @@
             <groupId>com.shopping</groupId>
             <artifactId>app-shopping-api</artifactId>
             <version>${project.version}</version>
-            <classifier>service-classes</classifier>
+            <classifier>api-classes</classifier>
             <scope>test</scope>
         </dependency>
         <dependency>

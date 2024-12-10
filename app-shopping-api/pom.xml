@@ -187,7 +187,7 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-                            <classifier>service-classes</classifier>
+                            <classifier>api-classes</classifier>
                         </configuration>
                     </execution>
                 </executions>
