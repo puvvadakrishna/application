@@ -3,9 +3,8 @@
   <component name="AdditionalModuleElements">
     <content url="file://$MODULE_DIR$" dumb="true">
       <sourceFolder url="file://$MODULE_DIR$/app-shopping-acceptance-tests/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/app-shopping-snippets/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/use" isTestSource="false" />
     </content>
-  </component>
-  <component name="SonarLintModuleSettings">
-    <option name="uniqueId" value="186bcc0e-cbeb-440b-ac11-f2fb83a465d5" />
   </component>
 </module>

@@ -1,5 +1,7 @@
+package com.shopping.test;
+
 class Vechile {
-    public String tyreShape() throws NullPointerException {
+    public String tyreShape() throws Exception {
         return "square";
     }
 }
@@ -10,9 +12,9 @@ public class Car extends Vechile {
         System.out.println(veh.tyreShape());
     }
 
-    public String tyreShape() throws Exception {
+    public String tyreShape() throws NullPointerException {
         return "round";
     }
 }
 
-// output -
+// output - ?

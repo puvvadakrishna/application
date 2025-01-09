@@ -1,8 +1,6 @@
 public enum Food{
-
     CHICKEN(false),
     POTATO(true);
-
     private final boolean isVegan;
     private Food(String isVegan) {
         this.isVegan = isVegan;
@@ -37,6 +35,8 @@ how do you approach this? you could change the pseduo code/ add / remove any met
 
  */
 public class Controller{
+
+
 
     @PostMapping("/consume")
     public boolean consumeFood(Food food)
