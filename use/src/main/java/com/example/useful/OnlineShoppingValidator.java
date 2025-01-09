@@ -13,6 +13,6 @@ Provide a approach for the validate of optional attributes based on source
 Hint to begin with:( consider SOLID principles in the approach). if you wish,you can ignore the hint as well
 
  */
-public abstract class OnlineShoppingValidator<T extends RequestPayLoad> {
-    abstract void validate(T request);
-}
+//public abstract class OnlineShoppingValidator<T extends RequestPayLoad> {
+//    abstract void validate(T request);
+//}

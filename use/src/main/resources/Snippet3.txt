@@ -1,18 +1,23 @@
-class Vechile {
+package src.main.resources;
+
+class Vehicle {
     public String tyreShape() throws NullPointerException {
         return "square";
     }
 }
 
-public class Car extends Vechile {
+public class Car extends Vehicle {
     public static void main(String[] args) {
-        Vechile veh = new Car(); //
+        Vehicle veh = new Car();
         System.out.println(veh.tyreShape());
     }
 
-    public String tyreShape() throws Exception {
+    public String tyreShape() throws NullPointerException {
         return "round";
     }
 }
 
 // output - compile time
+
+
+// output - round//

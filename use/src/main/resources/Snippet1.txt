@@ -1,3 +1,5 @@
+package src.main.java.com.example.useful.example;
+
 class Vehicle {
     public String tyreShape() throws NullPointerException {
         return "square";
@@ -5,12 +7,12 @@ class Vehicle {
 }
 
 public class Car extends Vehicle {
-    public static void main(String[] args) {
-        Car car = new Vechile();
+    public static void main(String[] args){
+        Car car = new Vehicle();
         System.out.println(car.tyreShape());
     }
 
-    public String tyreShape() throws Exception {
+    public String tyreShape() throws NullPointerException {
         return "round";
     }
 }

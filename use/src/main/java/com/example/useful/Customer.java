@@ -1,7 +1,8 @@
-package com.example.useful;
+package src.main.java.com.example.useful;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data

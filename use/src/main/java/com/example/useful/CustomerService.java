@@ -1,4 +1,4 @@
-package com.example.useful;
+package src.main.java.com.example.useful;
 
 import org.springframework.stereotype.Component;
 
@@ -14,7 +14,7 @@ public class CustomerService {
     public static Optional<Customer> getCustomer(String name) {
 
         CustomerData customerData = new CustomerData();
-        List<Customer> customerList = customerData.getDetails();
+        List<Customer> details = customerData.getDetails();
         return details.stream()
                 .filter(d -> d.getName().equals(name))
                 .map(c -> new Customer())
@@ -26,7 +26,7 @@ public class CustomerService {
     public Customer getAddress(String name) {
 
         CustomerData customerData = new CustomerData();
-        List<Customer> customerList = customerData.getCustomerData(name);
+        List<Customer> customerList = customerData.getDetails();
         for (int i = 0; i < customerList.size(); i++) {
             Customer c = customerList.get(i);
             if (c.getName().equalsIgnoreCase(name)) {

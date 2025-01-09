@@ -1,11 +1,12 @@
-package com.example.useful;
+package src.main.java.com.example.useful;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class CustomerData {
 

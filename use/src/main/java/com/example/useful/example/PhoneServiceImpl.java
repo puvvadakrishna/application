@@ -1,6 +1,5 @@
 package src.main.java.com.example.useful.example;
 
-
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.cache.annotation.Cacheable;
@@ -23,6 +22,12 @@ public class PhoneServiceImpl implements PhoneService {
     }
 
     public PhoneModel savePhone(PhoneModel model) {
+        if (model.getModelNo() == null || model.getModelNo().isEmpty()) {
+            throw new IllegalArgumentException("INVALID_MODEL_NO");
+        }
+        if (model.getModelColour().equalsIgnoreCase("BLACK")) {
+            throw new IllegalArgumentException("INVALID_MODEL_COLOR");
+        }
         return modelRepository.save(updateColor(model));
     }
 
@@ -35,6 +40,9 @@ public class PhoneServiceImpl implements PhoneService {
 
     @Override
     public List<PhoneModel> findByModelColour(String modelColour) {
+        if (modelColour.equalsIgnoreCase("BLACK")) {
+            throw new IllegalArgumentException("INVALID_MODEL_COLOR");
+        }
         List<PhoneModel> pm = modelRepository.findByModelColour(modelColour);
         if (!pm.isEmpty()) {
             return pm;
