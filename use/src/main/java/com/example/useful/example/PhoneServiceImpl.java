@@ -6,7 +6,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -21,21 +20,16 @@ public class PhoneServiceImpl implements PhoneService {
         this.simRepo = simRepo;
     }
 
-    public PhoneModel savePhone(PhoneModel model) {
-        if (model.getModelNo() == null || model.getModelNo().isEmpty()) {
+    public PhoneModel savePhone(PhoneModel phoneModel) {
+
+        if (phoneModel.getModelNo() == null || phoneModel.getModelNo().isEmpty()) {
             throw new IllegalArgumentException("INVALID_MODEL_NO");
         }
-        if (model.getModelColour().equalsIgnoreCase("BLACK")) {
+        if (phoneModel.getModelColour().equalsIgnoreCase("BLACK")) {
             throw new IllegalArgumentException("INVALID_MODEL_COLOR");
         }
-        return modelRepository.save(updateColor(model));
-    }
-
-    public List<PhoneModel> savePhones(List<PhoneModel> models) {
-
-        List<PhoneModel> model =
-                models.stream().map(this::updateColor).collect(Collectors.toList());
-        return modelRepository.saveAll(model);
+        updateColor(phoneModel);
+        return modelRepository.save(phoneModel);
     }
 
     @Override
@@ -60,9 +54,26 @@ public class PhoneServiceImpl implements PhoneService {
         return modelRepository.findByModelNo(modelNo);
     }
 
-    private PhoneModel updateColor(PhoneModel modle) {
-        modle.setModelColour(modle.getModelColour().toUpperCase());
-        return modle;
+    public List<PhoneModel> savePhones(List<PhoneModel> models) {
+
+        for (PhoneModel model : models) {
+            updateColor(model);
+        }
+        return modelRepository.saveAll(models);
+    }
+
+    private void updateColor(PhoneModel modle) {
+
+        if (modle != null) {
+            logColorUpdate(modle);
+            modle.setModelColour(modle.getModelColour().toUpperCase());
+        }
+    }
+
+    private void logColorUpdate(PhoneModel modle) {
+        if (modle != null) {
+            log.info("Updating color for model : " + modle.getModelNo());
+        }
     }
 
     public Long addPhone(PhoneModel pm) {
